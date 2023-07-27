@@ -13,7 +13,7 @@
     top: 150px;
     width: 15.5%;
     z-index: 1;
-    height: 450px;
+    height: 620px;
     overflow-y: scroll;
     overflow-x: hidden;
 }
@@ -162,6 +162,18 @@ a:hover{
     padding: 10px 20px;
     margin-bottom: 0;
 }
+.table-header-title input.form-control.me-2.serch-filed {
+    margin: 0 !important;
+}
+.table-header-title {
+    background-color: #f2f2f2;
+    padding: 0;
+    border-radius: 10px;
+
+}
+.table-header-title .row {
+    padding: 25px 15px;
+}
 
 @media only screen and (max-width:1440px){
   
@@ -171,6 +183,9 @@ a:hover{
 
 .bg-white.shipment-dashboard {
     left: 35px;
+}
+.bg-white.shipment-dashboard {
+    height: 544px;
 }
 }
 
@@ -184,7 +199,7 @@ a:hover{
 }
 .bg-white.shipment-dashboard {
     left: 35px;
-    height: 490px;
+    height: 550px;
     overflow-y: scroll;
     overflow-x: hidden;
 }
