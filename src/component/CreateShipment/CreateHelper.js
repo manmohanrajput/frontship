@@ -127,18 +127,35 @@ function CreateHelper() {
                    <h5 className='card-header-01 text-center'>Create Helper</h5>
                   </div>
                 <Form className='form-control-holder-hpr'>
+                  <div className='row'>
+                    <div className='col-6'>
                     <FormGroup>
                         <label class="form-label">Helper Name<span class="stra-icon">*</span></label>
                         <Input type="text" name="name" id="name" placeholder=" Enter helper Name" onBlur={(e) => handleInput(e)}/>
                     </FormGroup>
+                    </div>
+                    <div className='col-6'>
                     <FormGroup>
-                        <label class="form-label">Email<span class="stra-icon">*</span></label>
-                        <Input type="email" name="email" id="email" placeholder="Enter email" onBlur={(e) => setEmail(e.target.value)}/>
+                        <label class="form-label">Helper’s Email Address<span class="stra-icon">*</span></label>
+                        <Input type="email" name="email" id="email" placeholder="Enter Email Address" onBlur={(e) => setEmail(e.target.value)}/>
                     </FormGroup>
+                    </div>
+                  </div>
+                  <div className='row'>
+                    <div className='col-6'>
+                    
                     <FormGroup>
-                        <label class="form-label">Address<span class="stra-icon">*</span></label>
-                        <Input type="text" name="address" id="address" placeholder="Enter address" onBlur={(e) => setAddress(e.target.value)}/>
+                        <label class="form-label">Helper’s Contact Number<span class="stra-icon">*</span></label>
+                        <Input type="number" name="email" id="email" placeholder="Helper’s Contact Number*" onBlur={(e) => setEmail(e.target.value)}/>
                     </FormGroup>
+                    </div>
+                    <div className='col-6'>
+                    <FormGroup>
+                        <label class="form-label">Helper’s Address*<span class="stra-icon">*</span></label>
+                        <Input type="text" name="address" id="address" placeholder="Enter Address" onBlur={(e) => setAddress(e.target.value)}/>
+                    </FormGroup>
+                    </div>
+                    </div>
                     <p id="validate-batch" style={{ color: 'red' }}></p>
                     <Button variant="contained" className='main_botton submit-btn'  onClick={() => addBatch(name,email,address,setModalIsOpen,getBatchList)}>Create Helper</Button>
 

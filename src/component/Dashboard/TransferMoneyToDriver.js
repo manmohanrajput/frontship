@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
-import "../../css/shippment.css";
+// import "../../css/shippment.css";
+import '../../css/transfermoneytodriver.css'
 import axios from "axios";
 import { Nav, NavItem, Form, Button, Modal, ModalBody } from "reactstrap";
 import { Link } from "react-router-dom";
 
-function CreateDispatch() {
+function TransferMoneyToDriver() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const [name, setName] = useState("");
@@ -72,7 +73,7 @@ function CreateDispatch() {
           <div className="">
             <div className="admin-dashboard">
               <div className="title-header">
-                <h5 className="card-header-01 text-center">Create Dispatcher</h5>
+                <h5 className="card-header-01 text-center">Transfer money to Driver</h5>
                 <ModalBody className="close-icon">
                   <AiOutlineClose
                     className="main_AiOutlineClose"
@@ -82,66 +83,54 @@ function CreateDispatch() {
                 </ModalBody>
               </div>
               <div className="row card-holder">
-                <form className="form-control-holder"  onSubmit={handleSubmit}>
-                  <div className="row">
+                <form className="form-control-holder"  onSubmit={handleSubmit} >
+                    
+                  <div className="d-flex Transfer-form">
                   <div className="mb-4">
                     <label for="exampleInputEmail1" className="form-label">
-                      Full name<span className="stra-icon">*</span>
+                    Driver Name<span className="stra-icon">*</span>
                     </label>
                     <input
                       name="full_name"   
                       onChange={(e)=> setName(e.target.value)}          
                       id="first_name"
-                      placeholder="Enter your name"
+                      placeholder="Enter Name"
                       type="text"
                     />
                {error && name.length<=0?<span className="valid-form" style={{color:'red'}}>Please Enter full name*</span>:""}
                   </div>
                   <div className="mb-4">
                     <label className="form-label">
-                      Email<span className="stra-icon">*</span>
-                    </label>
-                    <input
-                      name="email"   
-                      onChange={(e)=> setEmail(e.target.value)}          
-                      id="email"
-                      placeholder="Enter your email"
-                      type="email"
-                    />
-                  {error && email.length <= 0 ?<span className="valid-form" style={{color:'red'}}>Please Enter the valid Email*</span>:""}
-
-                  </div>
-                  </div>
-                  <div className="mb-4">
-                    <label className="form-label">
-                      Phone Number<span className="stra-icon">*</span>
+                    Shipment ID<span className="stra-icon">*</span>
                     </label>
                     <input
                        name="phone"   
                        onChange={(e)=> setPhone(e.target.value)}          
                        id="phone"
-                       placeholder="Enter your phone"
+                       placeholder="Enter Shipment ID"
                        type="number"
                     />
                      {error && phone.length <= 0 ?<span className="valid-form" style={{color:'red'}}>Please Enter the 10 Digit number*</span>:""}
 
                   </div>
-                  <div className="mb-4">
+                  </div>
+
+                  <div className="mb-4 w-50 Transfer-form ">
                     <label className="form-label">
-                      Password<span className="stra-icon">*</span>{" "}
+                    Transfer Amount<span className="stra-icon">*</span>
                     </label>
                     <input
-                       name="password"   
-                       onChange={(e)=> setPassword(e.target.value)}          
-                       id="password"
-                       placeholder="Enter your password"
-                       type="password"
+                       name="phone"   
+                       onChange={(e)=> setPhone(e.target.value)}          
+                       id="phone"
+                       placeholder="Enter Amount"
+                       type="number"
                     />
-                  {error && password.length <= 0 ?<span className="valid-form" style={{color:'red'}}>Create your password*</span>:""}
+                     {error && phone.length <= 0 ?<span className="valid-form" style={{color:'red'}}>Please Enter the 10 Digit number*</span>:""}
 
                   </div>
                   <button type="submit" className="submit-btn"  value="Send Message">
-                    Create Dispatcher
+                  Transfer Amount
                   </button>
                   <div className="succbtn mb-4" >{succbtn ? <p>{succbtn}</p> : null}</div>
                 </form>
@@ -150,16 +139,13 @@ function CreateDispatch() {
           </div>
         </div>
       </Modal>
-      <div className="d-flex create-dispatcher align-items-center">
-        <div className="plus-icon">
+      <div className="d-flex shipment-bnt">
           <button type="submit" onClick={() => setModalIsOpen(true)}>
-            <img src="/Assets/dash/plus.png" />
-          Dispatcher
+            Transfer money to Driver
           </button>
-        </div>
       </div>
     </div>
   );
 }
 
-export default CreateDispatch;
+export default TransferMoneyToDriver;

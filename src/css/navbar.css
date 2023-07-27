@@ -85,3 +85,6 @@ hrader {
     width: 100%;
     left: 0;
 }
+input::placeholder{
+    color: #6B7DB1;
+}
