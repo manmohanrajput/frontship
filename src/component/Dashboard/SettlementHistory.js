@@ -3,7 +3,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import axios from 'axios';
 import '../../css/dispatchlist.css'
 import Navbar from '../Navbar'
-
+import CreateHelper from '../CreateShipment/CreateHelper'
 
 import {
   Nav,
@@ -18,11 +18,10 @@ import {
 
 import { Link } from "react-router-dom";
 import { AiTwotoneDelete } from "react-icons/ai";
-import CreateCustomer from './CreateCustomer';
 
 async function ContactData(getContact){
 
-  await axios.get('http://localhost:5000/createcustomer/creatcustomer',
+  await axios.get('https://shippment-dfx.onrender.com/api/createhelper',
   // { inst_hash: localStorage.getItem('inst_hash_manual') },
   {
       headers: { authorization: `Bearer ${localStorage.getItem('token')}` },
@@ -35,15 +34,15 @@ async function ContactData(getContact){
 }
 //************************************************************** */
 
-async function updateBatch(id,name,email,phone,altphone,setModalIsOpenEdit,getBatchList){
-  if (name != "" && email != "" && phone != "" && altphone != "") {
-      await axios.post('http://localhost:5000/createcustomer/updatecustomer',
+async function updateBatch(id,name,email,phone,address,setModalIsOpenEdit,getBatchList){
+  if (name != "" && email != "" && phone != "" && address != "") {
+      await axios.post('https://shippment-dfx.onrender.com/api/updatehelper',
       {inst_hash: localStorage.getItem('inst_hash'),
       id : id,
       name: name,
       email: email,
       phone: phone,
-      altphone: altphone
+      address: address
       },
       {headers: { authorization:`Bearer ${localStorage.getItem('token')}` }}
   )
@@ -58,7 +57,7 @@ async function updateBatch(id,name,email,phone,altphone,setModalIsOpenEdit,getBa
 
 //************************************************************** */
 async function deleteContact(ids,getContact,DefaultgetContact ){
-  const results = await axios.post('http://localhost:5000/createcustomer/delcustomer',
+  const results = await axios.post('https://shippment-dfx.onrender.com/api/delhelper',
       {
           id:ids
       },
@@ -71,7 +70,7 @@ async function deleteContact(ids,getContact,DefaultgetContact ){
   }
 
 
-function CustomerList() {
+function SettlementHistory() {
     const [rowCount, setRowCount] = useState(0);
     const [inquiries, setInquiries] = useState( );
     const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -79,7 +78,7 @@ function CustomerList() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
-    const [altphone, setAltphone] = useState("");
+    const [address, setAddress] = useState('');
     const [batchList,getBatchList] = useState([]);
 
 
@@ -112,7 +111,7 @@ function CustomerList() {
 <Modal isOpen={modalIsOpenEdit} className='main_modal_body dispatcher-list-form'>
                 <ModalBody className='modal_body'>
                 <AiOutlineClose className='main_AiOutlineClose close-icon' onClick={()=>setModalIsOpenEdit(false)}/>
-                   <h5 className='main_h5'>Edit Driver List</h5>
+                   <h5 className='main_h5'>Settlement History List</h5>
                 </ModalBody>
                 <Form className='form_main '>
                     <FormGroup>
@@ -125,10 +124,10 @@ function CustomerList() {
                         <Input type="number" name="phone" id="phone" placeholder="Edit Phone Number " onBlur={(e) => {setPhone(e.target.value); console.log(e.target.value);}} />
                     </FormGroup>
                     <FormGroup>
-                        <Input type="number" name="phone" id="phone" placeholder="Edit Alternate number " onBlur={(e) => {setAltphone(e.target.value); console.log(e.target.value);}} />
+                        <Input type="text" name="address" id="address" placeholder="Edit Address " onBlur={(e) => {setAddress(e.target.value); console.log(e.target.value);}} />
                     </FormGroup>
                     <p id="edit-validate-batch" style={{ color: 'red' }}></p>
-                    <Button variant="contained" className='main_botton' style={{backgroundColor: '#6A3187'}} onClick={() => updateBatch(ids,name,email,phone,altphone,setModalIsOpenEdit,getBatchList)}>Edit Driver List</Button>
+                    <Button variant="contained" className='main_botton' style={{backgroundColor: '#6A3187'}} onClick={() => updateBatch(ids,name,email,phone,address,setModalIsOpenEdit,getBatchList)}>Edit Driver List</Button>
                 </Form>
             </Modal>
 
@@ -172,7 +171,7 @@ function CustomerList() {
         <div class="container-fluid">
             <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 nameuser">
-                <h2>All Helper List</h2>
+                <h2>Settlement History List</h2>
     
         {/* <p>May 22, 2023</p>  */}
                 </div>
@@ -191,27 +190,24 @@ function CustomerList() {
 
                     </div>
                 <div class="col view-table-new">
-
-
                 <div className='driver-view-list'>
                       <div className=''>
-                        <h2>All Customer List</h2>
+                        <h2>Settlement History List</h2>
                       </div>
                       <div className='add-new-form-btn'>
-                      <CreateCustomer/>          
+                             
                       </div>
                     </div>
-
                     <table class="table align-middle bg-white rounded m-0" id="table-to-xls">
                         <thead class="tableheading">
                           <tr>
                             <th scope="col" class="borderre">No.</th>
-                            <th scope="col">Customer ID</th>
+                            <th scope="col">Helper ID</th>
 
-                            <th scope="col">Customer Name</th>
-                            <th scope="col">Customer Email</th>
-                            <th scope="col">Customer Phone number</th>
-                            <th scope="col"> Alternate Number</th>
+                            <th scope="col">Helper Name</th>
+                            <th scope="col">Helper Email</th>
+                            <th scope="col">Helper Phone number</th>
+                            <th scope="col">Helper Address</th>
                             
                             <th scope="col" class="borderre1">Action</th>
                           </tr>
@@ -228,7 +224,7 @@ function CustomerList() {
             <td>{item.name}</td>
             <td className="dis-email text-left">{item.email}</td>
             <td>{item.phone}</td>
-            <td>{item.altphone}</td>
+            <td>{item.address}</td>
             <td>
             {/* <button className="btn bt"><a href="#" class="eye"><i class="bi bi-pen"></i></a></button> */}
             <button className='btn btn1' onClick={()=>{setModalIsOpenEdit(true); setIds(item.id)}}><i class="bi bi-pen"></i></button>
@@ -282,6 +278,6 @@ function CustomerList() {
   }
 }
 
-export default CustomerList;
+export default SettlementHistory;
 
 
