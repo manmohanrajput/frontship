@@ -13,6 +13,7 @@ const DriverList = React.lazy(() => import("./component/Dashboard/DriverList"));
 const HelperList = React.lazy(() => import("./component/CreateShipment/HelperList"))
 const VehicalList = React.lazy(() => import("./component/CreateShipment/VehicalList"))
 // const TransferMoneyToDriver = React.lazy(() => import("./component/Dashboard/TransferMoneyToDriver"))
+const CustomerList = React.lazy(() => import("./component/CreateShipment/CustomerList"))
 
 
 function App() {
@@ -33,7 +34,7 @@ function App() {
             {/* <Route exact path="/vehical" element={<VehicalForm/>}/> */}
             <Route  exact path="/helperList" element={<HelperList/>}/>
             <Route  exact path="/vehicalList" element={<VehicalList/>}/>
-            {/* <Route  exact path="/transfermoneytodriver" element={<TransferMoneyToDriver/>}/> */}
+            <Route  exact path="/customerList" element={<CustomerList/>}/>
 
           </Routes>
         </React.Suspense>
