@@ -4,6 +4,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import PaymentRecords from './component/Dashboard/PaymentRecords';
 import SettlementRecords from './component/Dashboard/SettlementRecords';
+import SettlementHistory from './component/Dashboard/SettlementHistory';
 
 const Login = React.lazy(() => import("./component/Login"));
 const VerifyOTP =  React.lazy(() => import("./component/VerifyOTP"))
@@ -18,6 +19,7 @@ const VehicalList = React.lazy(() => import("./component/CreateShipment/VehicalL
 const CustomerList = React.lazy(() => import("./component/CreateShipment/CustomerList"))
 const paymentRecords = React.lazy(() => import("./component/Dashboard/PaymentRecords"))
 const settlementRecord = React.lazy(() => import("./component/Dashboard/SettlementRecords"))
+const settlementHistory = React.lazy(() => import("./component/Dashboard/SettlementHistory"))
 
 
 function App() {
@@ -41,6 +43,7 @@ function App() {
             <Route  exact path="/customerList" element={<CustomerList/>}/>
             <Route  exact path="/paymentRecords" element={<PaymentRecords/>}/>
             <Route  exact path="/settlementRecord" element={<SettlementRecords/>}/>
+            <Route  exact path="/settlementhistory" element={<SettlementHistory/>}/>
 
           </Routes>
         </React.Suspense>

@@ -125,7 +125,7 @@ function ShipmentList() {
 							</div>
 							<div class="col-md-6 border-left">
 								<div class="card-body text-center p-2">
-									<Link to="/">
+									<Link to="/settlementhistory">
 										<img src="/Assets/gif/wallet.gif"/>	
 										<p class="card-text">Settlement History</p>
 									</Link>
