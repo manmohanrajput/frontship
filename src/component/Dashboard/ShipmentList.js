@@ -57,19 +57,11 @@ function ShipmentList() {
                                     </Link>
 								</div>
 							</div>
-							<div class="col-md-6 border-left">
+							<div class="col-md-6 border-right">
 								<div class="card-body text-center py-2">
-                                    <Link to="/helperList">
+                                    <Link to="/">
 							    	<img src="/Assets/gif/policeman.gif"/>
-								    <p class="card-text">Helper List</p>
-                                    </Link>
-								</div>
-							</div>
-							<div class="col-md-6 border-left">
-								<div class="card-body text-center py-2">
-                                    <Link to="/vehicalList">
-							    	<img src="/Assets/gif/policeman.gif"/>
-								    <p class="card-text">Vehical List</p>
+								    <p class="card-text">Customer List</p>
                                     </Link>
 								</div>
 							</div>
@@ -89,21 +81,45 @@ function ShipmentList() {
 								</div>
 							</div>
 						</div>
+						
 						<h5 class="card-header-02 text-center">Helper and Vehicle list</h5>
 						<div class="row card-holder-py">
 							<div class="col-md-6 border-right">
 								<div class="card-body text-center p-2">
-							    	<img src="/Assets/gif/ewallet.gif"/>	
-							    	<p class="card-text">Helper List</p>
+									<Link to="/helperList">
+										<img src="/Assets/gif/ewallet.gif"/>	
+										<p class="card-text">Helper List</p>
+									</Link>
 								</div>
 							</div>
 							<div class="col-md-6 border-left">
 								<div class="card-body text-center p-2">
-							    	<img src="/Assets/gif/wallet.gif"/>	
-								    <p class="card-text">Vehicle List</p>
+									<Link to="/vehicalList">
+										<img src="/Assets/gif/wallet.gif"/>	
+										<p class="card-text">Vehicle List</p>
+									</Link>
 								</div>
 							</div>
 						</div>
+						<div class="row card-holder-py">
+							<div class="col-md-6 border-right">
+								<div class="card-body text-center p-2">
+									<Link to="/helperList">
+										<img src="/Assets/gif/ewallet.gif"/>	
+										<p class="card-text">Settlement Record</p>
+									</Link>
+								</div>
+							</div>
+							<div class="col-md-6 border-left">
+								<div class="card-body text-center p-2">
+									<Link to="/vehicalList">
+										<img src="/Assets/gif/wallet.gif"/>	
+										<p class="card-text">Settlement History</p>
+									</Link>
+								</div>
+							</div>
+						</div>
+						
 					</div>
 				</div>
     </div>

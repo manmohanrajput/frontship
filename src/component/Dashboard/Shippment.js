@@ -22,7 +22,7 @@ function Shippment() {
 												<div class="w-50"><CreateVehical/></div>
 											</div>
 											<div className='account-here-btn text-center'>
-												<div class="w-100 "><CreateVehical/></div>
+												<div class="w-100 ">Customer</div>
 											</div>
 
 									  </div>
