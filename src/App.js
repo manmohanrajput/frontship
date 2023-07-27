@@ -12,6 +12,7 @@ const DriverList = React.lazy(() => import("./component/Dashboard/DriverList"));
 // const VehicalForm = React.lazy(() => import("./component/CreateShipment/CreateVehical"));
 const HelperList = React.lazy(() => import("./component/CreateShipment/HelperList"))
 const VehicalList = React.lazy(() => import("./component/CreateShipment/VehicalList"))
+// const TransferMoneyToDriver = React.lazy(() => import("./component/Dashboard/TransferMoneyToDriver"))
 const CustomerList = React.lazy(() => import("./component/CreateShipment/CustomerList"))
 
 
