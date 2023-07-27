@@ -67,24 +67,10 @@ function ShipmentList() {
 								</div>
 							</div>
 						</div>
-						<h5 class="card-header-02 text-center">Payments</h5>
-						<div class="row card-holder-py">
-							<div class="col-md-6 border-right">
-								<div class="card-body text-center p-2">
-							    	<img src="/Assets/gif/ewallet.gif"/>	
-							    	<p class="card-text">Payment Records</p>
-								</div>
-							</div>
-							<div class="col-md-6 border-left">
-								<div class="card-body text-center p-2">
-							    	<img src="/Assets/gif/wallet.gif"/>	
-								    <p class="card-text"><TransferMoneyToDriver/></p>
-								</div>
-							</div>
-						</div>
-						
 						<h5 class="card-header-02 text-center">Helper and Vehicle list</h5>
 						<div class="row card-holder-py">
+							
+
 							<div class="col-md-6 border-right">
 								<div class="card-body text-center p-2">
 									<Link to="/helperList">
@@ -93,6 +79,7 @@ function ShipmentList() {
 									</Link>
 								</div>
 							</div>
+
 							<div class="col-md-6 border-left">
 								<div class="card-body text-center p-2">
 									<Link to="/vehicalList">
@@ -101,11 +88,36 @@ function ShipmentList() {
 									</Link>
 								</div>
 							</div>
+
+
+						</div>
+						
+						<h5 class="card-header-02 text-center">Payments</h5>
+						<div class="row card-holder-py">
+						<div class="col-md-6 border-right">
+								<div class="card-body text-center p-2">
+								<Link to="/paymentRecords">
+
+							    	<img src="/Assets/gif/ewallet.gif"/>	
+							    	<p class="card-text">Payment Records</p>
+									</Link>
+
+								</div>
+							</div>
+							
+
+
+							<div class="col-md-6 border-left">
+								<div class="card-body text-center p-2">
+							    	<img src="/Assets/gif/wallet.gif"/>	
+								    <p class="card-text"><TransferMoneyToDriver/></p>
+								</div>
+							</div>
 						</div>
 						<div class="row card-holder-py">
 							<div class="col-md-6 border-right">
 								<div class="card-body text-center p-2">
-									<Link to="/helperList">
+									<Link to="/settlementRecord">
 										<img src="/Assets/gif/ewallet.gif"/>	
 										<p class="card-text">Settlement Record</p>
 									</Link>
@@ -113,7 +125,7 @@ function ShipmentList() {
 							</div>
 							<div class="col-md-6 border-left">
 								<div class="card-body text-center p-2">
-									<Link to="/vehicalList">
+									<Link to="/">
 										<img src="/Assets/gif/wallet.gif"/>	
 										<p class="card-text">Settlement History</p>
 									</Link>
