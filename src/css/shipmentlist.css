@@ -135,7 +135,7 @@ a:hover{
 }
 
 .row.card-holder-py {
-    padding: 0 40px;
+    padding: 5px 13px !important;
 }
 
 .col-md-6.border-top-right {
@@ -226,4 +226,8 @@ a:hover{
 .row.card-holder-py {
     padding: 0 15px;
 }
+}
+
+input::placeholder{
+    color: #6B7DB1;
 }

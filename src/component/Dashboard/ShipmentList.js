@@ -1,6 +1,7 @@
 import React from 'react'
 import '../../css/shipmentlist.css'
 import { Link } from "react-router-dom";
+import TransferMoneyToDriver from '../Dashboard/TransferMoneyToDriver'
 
 
 function ShipmentList() {
@@ -77,7 +78,7 @@ function ShipmentList() {
 							<div class="col-md-6 border-left">
 								<div class="card-body text-center p-2">
 							    	<img src="/Assets/gif/wallet.gif"/>	
-								    <p class="card-text">Transfer money to Driver</p>
+								    <p class="card-text"><TransferMoneyToDriver/></p>
 								</div>
 							</div>
 						</div>
