@@ -59,7 +59,7 @@ function ShipmentList() {
 							</div>
 							<div class="col-md-6 border-right">
 								<div class="card-body text-center py-2">
-                                    <Link to="/">
+                                    <Link to="/customerList">
 							    	<img src="/Assets/gif/policeman.gif"/>
 								    <p class="card-text">Customer List</p>
                                     </Link>
