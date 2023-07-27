@@ -1,0 +1,259 @@
+row{
+    padding: 0;
+    margin: 0;
+}
+button {
+    background-color: transparent;
+    color: #fff;
+    display: flex;
+    font-size: 14px;
+    border: none;
+    align-items: center;
+}
+.admin-dashboard, .shipment-dashboard, .account-here{
+    background-color: white;
+    border-radius: 16px;
+}
+.admin-dashboard-container {
+    margin-top: 150px;
+    z-index: 1;
+}
+.account-here  p {
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 20px;
+    margin-bottom: 0;
+}
+.create-dispatcher-01 {
+    background-color: #00CCCC;
+    margin-top: 10px;
+    padding: 10px 20px 10px;
+    color: #fff;
+    border-radius: 8px;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+}
+.account-here-btn {
+    justify-content: space-around;
+    column-gap: 20px;
+}
+.create-dispatcher {
+    background-color: #1b2644;
+    padding: 10px 20px 10px;
+    color: #fff;
+    border-radius: 8px;
+    margin-top: 10px;
+    text-align: center;
+    justify-content: center;
+}
+.plus-icon img {
+    margin-right: 15px;
+}
+
+.admin-dashboard, .shipment-dashboard, .account-here{
+    background-color: white;
+    border-radius: 16px;
+}
+
+.card-01 {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px 0px #006c6c1c;
+}
+.admin-dashboard  .card-text {
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 12px;
+    color: #1F1F1F;
+}
+.admin-dashboard h2 {
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 41px;
+    color: #1b2644;
+}
+.admin-dashboard-container {
+    margin-top: 150px;
+    z-index: 1;
+}
+.card-header-01 {
+    font-size: 24px;
+    font-weight: 700;
+    background-color: #1B26441F;
+    padding: 13px 30px;
+    border-radius: 10px 10px 0 0;
+}
+.card-holder {
+    padding: 62px 40px 62px;
+}
+.row.card-holder-py {
+    padding: 0 40px;
+}
+.card-holder-01 {
+    padding: 40px 40px 0;
+}
+
+label.form-label {
+
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+}
+.form-control-holder input {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px solid #E7E7E7;
+}
+.form-control-holder input:focus{
+border: 1px solid #E7E7E7;
+outline: none;
+}
+span.stra-icon {
+    color: #FF0000;
+
+}
+.form-control-holder input::placeholder {
+    color: #6B7DB1;
+    font-size: 16px;
+    font-weight: 400;
+}
+form.form-control-holder {
+    box-shadow: 0px 4px 25px 0px #1B264424;
+    width: 90%;
+    margin: auto;
+    padding: 32px 32px;
+    border-radius: 16px;
+}
+
+
+.form-control-holder button.submit-btn, .form-control-holder-hpr button.submit-btn {
+    width: 100%;
+    border: none;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    border-radius: 16px;
+    background-color: #1B2644;
+    color: #fff;
+    display: block;
+}
+.modal-form-body {
+    width: 100% !important;
+    max-width: 55%;
+}
+
+.close-icon {
+    position: absolute;
+    top: -10px;
+    font-size: 25px;
+    right: 0;
+}
+.checkbox-col.d-flex {
+    align-items: center;
+    width: 50%;
+}
+input#vehicle1 , input#vehicle2{
+    width: 25px;
+}
+.d-flex.check-box-container {
+    border: 1px solid gainsboro;
+    padding: 12px;
+    border-radius: 10px;
+}
+.checkbox-col.d-flex label {
+    color: #6b91cd;
+}
+/* form toggle */
+.form-heder {
+    display: flex;
+    justify-content: space-around;
+}
+.Pickup-from, .Delivery-from {
+    width: 50%;
+    text-align: center;
+}
+.Pickup-from {
+    background-color: #e3e5e8;
+    padding: 10px;
+}
+.Pickup-from.active{
+    background-color: #fff;
+    padding: 10px;
+}
+.close-icon-hpr {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 20px;
+}
+.form-control-holder-hpr {
+    box-shadow: 0px 4px 25px 0px #1B264424;
+    width: 90%;
+    padding: 32px 32px;
+    border-radius: 16px;
+    margin: 40px auto;
+}
+.modal-dialog.main_modal_body {
+    max-width: 55%;
+    width: 100%;
+}
+.form-control-holder-hpr input {
+    padding: 10px 15px;
+    border: 1px solid gainsboro;
+}
+.form-control:focus {
+    color: #000;
+    background-color: #fff;
+    border-color: #dbdbdb;
+    outline: 0;
+    box-shadow: none;
+}
+span.stra-icon {
+    color: #FF0000;
+
+}
+
+
+@media only screen and (max-width:1440px){
+    .account-here  p {
+    font-size: 16px;
+}
+.create-dispatcher, .create-dispatcher-01 {
+    padding: 10px 16px 10px;
+}
+.admin-dashboard  .card-text {
+    font-size: 19px;
+}
+.col-md-9.admin-dashboard-container {
+    padding-right: 0;
+}
+.admin-dashboard h2 {
+    font-size: 30px;
+}
+.col-md-9.admin-dashboard-container {
+    padding-right: 0;
+}
+.admin-dashboard h2 {
+    font-size: 30px;
+}
+.card-holder {
+    padding: 37px 40px 37px;
+}
+}
+
+@media only screen and (max-width:1240px){
+    .account-here  p {
+        font-size: 13px;
+}
+.admin-dashboard  .card-text {
+    font-size: 18px;
+}
+}
+@media only screen and (max-width:1370px){
+.row.card-holder-py {
+    padding: 0 15px;
+}}

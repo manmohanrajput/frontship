@@ -1,0 +1,87 @@
+*{
+    font-family: 'Inter', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: #F2F2F2;
+}
+
+.bg-color {
+    background-color: #1B2644;
+    padding-bottom: 100px;
+    padding-top: 30px;
+}
+.avtar img {
+    width: 100%;
+}
+.avtar {
+    color: #fff;
+    display: flex;
+    column-gap: 8px;
+    align-items: center;
+}
+div#navbarScroll {
+    width: 265px;
+}
+.bg-color ul li a.nav-link.dropdown-toggle {
+    color: #fff;
+    padding: 0 10px;
+}
+.menu-container {
+    align-items: center;
+    justify-content: space-between;
+}
+.notification {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    margin-left: 10px;
+}
+.header-logo {
+    max-width: 300px;
+    display: flex;
+    align-items: center;
+}
+.header-logo img{
+    width: 86%;
+
+}
+
+.submit-btn{
+	margin-top:20px;
+    background: rgba(27, 38, 68, 1);
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+}
+.card.login-form {
+    padding: 20px 40px;
+}
+.login-form input {
+    padding: 10px 15px;
+    margin-top: 10px;
+}
+.modal-body svg.main_AiOutlineClose {
+    cursor: pointer;
+}
+.notification {
+    column-gap: 0;
+    margin-left: 0;
+}
+.container.d-flex.justify-content-between {
+    padding: 0;
+}
+.notification img {
+    width: 32px;
+    margin: 0px 5px;
+}
+hrader {
+    position: fixed;
+    top: 0;
+    height: 271px;
+    z-index: 1;
+    width: 100%;
+    left: 0;
+}

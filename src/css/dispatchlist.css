@@ -1,0 +1,70 @@
+table#table-to-xls {
+    box-shadow: 0px 0px 13px 0px #0000001a;
+    border-radius: 15px !important;
+}
+span.dispatcher-id {
+    text-align: center;
+    padding: 4px 10px;
+    color: #502ACD;
+    border-radius: 5px;
+    border: 1px solid #502ACD;
+}
+li.page-item a {
+    background-color: #1B2644;
+    color: #fff;
+    padding: 7px 30px;
+    margin-top: 20px;
+    margin-right: 12px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.tableheading th {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 40px;
+    padding: 7px 28px;
+}
+.delete::before {
+    color: red;
+}
+.tbody th, .tbody td {
+    padding: 12px 30px;
+}
+.dispatcher-list-form .modal_body.modal-body {
+    background-color: gainsboro;
+}
+.close-icon {
+    position: absolute;
+    right: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+form.form_main {
+    padding: 30px;
+}
+.dispatcher-list-form h5.main_h5 {
+    text-align: center;
+}
+
+.dispatcher-list-form input {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px solid #E7E7E7;
+}
+.dispatcher-list-form input::placeholder{
+    color: #6941c6;
+}
+.dispatcher-list-form button{
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 15px;
+    background-color: #1b2644 !important;
+}
+table#table-to-xls {
+    z-index: 9;
+    position: relative;
+    margin-top: 50px !important;
+}
