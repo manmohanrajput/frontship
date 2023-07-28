@@ -29,7 +29,7 @@ function VerifyOTP() {
   async function handleSendOTP() {
     if(username!=''){
      const sendOTP = await axios
-     .post("https://shippment-dfx.onrender.com/api/otpsend", {
+     .post("https://shippment-dfx.onrender.com/api/otpsendusrname", {
        username: `${username}`,
      })
      .then(

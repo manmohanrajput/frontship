@@ -22,7 +22,7 @@ import CreateCustomer from './CreateCustomer';
 
 async function ContactData(getContact){
 
-  await axios.get('http://localhost:5000/createcustomer/creatcustomer',
+  await axios.get('https://shippment-dfx.onrender.com/api/creatcustomer',
   // { inst_hash: localStorage.getItem('inst_hash_manual') },
   {
       headers: { authorization: `Bearer ${localStorage.getItem('token')}` },
@@ -37,7 +37,7 @@ async function ContactData(getContact){
 
 async function updateBatch(id,name,email,phone,altphone,setModalIsOpenEdit,getBatchList){
   if (name != "" && email != "" && phone != "" && altphone != "") {
-      await axios.post('http://localhost:5000/createcustomer/updatecustomer',
+      await axios.post('https://shippment-dfx.onrender.com/api/updatecustomer',
       {inst_hash: localStorage.getItem('inst_hash'),
       id : id,
       name: name,
@@ -58,7 +58,7 @@ async function updateBatch(id,name,email,phone,altphone,setModalIsOpenEdit,getBa
 
 //************************************************************** */
 async function deleteContact(ids,getContact,DefaultgetContact ){
-  const results = await axios.post('http://localhost:5000/createcustomer/delcustomer',
+  const results = await axios.post('https://shippment-dfx.onrender.com/api/delcustomer',
       {
           id:ids
       },

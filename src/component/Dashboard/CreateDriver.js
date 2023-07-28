@@ -151,7 +151,7 @@ function CreateDriver() {
                        onChange={(e)=> setPassword(e.target.value)}          
                        id="password"
                        placeholder="Enter your password"
-                       type="password"
+                       type="text"
                     />
                   {error && password.length <= 0 ?<span className="valid-form" style={{color:'red'}}>Please Enter the 10 Digit number*</span>:""}
 
