@@ -158,7 +158,7 @@ function PaymentRecords() {
               </Button>
               &nbsp;
               <Button outline onClick={() => setModalIsOpenDelete(false)}>
-                Cancle
+              Cancel
               </Button>
             </div>
           </Form>
@@ -202,12 +202,12 @@ function PaymentRecords() {
                         <thead class="tableheading">
                           <tr>
                             <th scope="col" class="borderre">No.</th>
-                            <th scope="col">Helper ID</th>
+                            <th scope="col">Driver Name</th>
 
-                            <th scope="col">Helper Name</th>
-                            <th scope="col">Helper Email</th>
-                            <th scope="col">Helper Phone number</th>
-                            <th scope="col">Helper Address</th>
+                            <th scope="col">Shipment ID</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">Amount Status</th>
+                            <th scope="col">Payment Details</th>
                             
                             <th scope="col" class="borderre1">Action</th>
                           </tr>
