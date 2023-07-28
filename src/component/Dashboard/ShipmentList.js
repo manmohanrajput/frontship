@@ -65,7 +65,7 @@ function ShipmentList() {
 							<div class="col-md-6 border-right">
 								<div class="card-body text-center py-2">
                                     <Link to="/customerList">
-							    	<img src="/Assets/gif/policeman.gif"/>
+							    	<img src="/Assets/gif/customer.gif"/>
 								    <p class="card-text">Customer List</p>
                                     </Link>
 								</div>
@@ -78,7 +78,7 @@ function ShipmentList() {
 							<div class="col-md-6 border-right">
 								<div class="card-body text-center p-2">
 									<Link to="/helperList">
-										<img src="/Assets/gif/ewallet.gif"/>	
+									<img src="/Assets/gif/policeman.gif"/>	
 										<p class="card-text">Helper List</p>
 									</Link>
 								</div>
@@ -87,7 +87,7 @@ function ShipmentList() {
 							<div class="col-md-6 border-left">
 								<div class="card-body text-center p-2">
 									<Link to="/vehicalList">
-										<img src="/Assets/gif/wallet.gif"/>	
+										<img src="/Assets/gif/truck-0.gif"/>	
 										<p class="card-text">Vehicle List</p>
 									</Link>
 								</div>
@@ -122,7 +122,7 @@ function ShipmentList() {
 							<div class="col-md-6 border-right">
 								<div class="card-body text-center p-2">
 									<Link to="/settlementRecord">
-										<img src="/Assets/gif/ewallet.gif"/>	
+									<img src="/Assets/gif/delivery-01.gif"/>	
 										<p class="card-text">Settlement Record</p>
 									</Link>
 								</div>
@@ -130,7 +130,7 @@ function ShipmentList() {
 							<div class="col-md-6 border-left">
 								<div class="card-body text-center p-2">
 									<Link to="/settlementhistory">
-										<img src="/Assets/gif/wallet.gif"/>	
+									<img src="/Assets/gif/delivery-01.gif"/>
 										<p class="card-text">Settlement History</p>
 									</Link>
 								</div>
