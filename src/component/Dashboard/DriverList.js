@@ -192,14 +192,22 @@ function DriverList() {
                     </div>
                 <div class="col view-table-new">
                   <div className='driver-view-list'>
-                    <div className=''>
-                      <h2>All Driver List</h2>
+                      <div className=''>
+                        <h2>All Driver List</h2>
+                      </div>
+                      <div class="w-50 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+                          <div class="input-group input-group-lg">
+                            <span style={{backgroundColor:"#fff"}} class="input-group-text" id="basic-addon1"><i class="bi bi-search" ></i></span>
+                            <input  style={{fontSize:"15px"}} className="form-control me-2 serch-filed" type="search" placeholder="Search Here" aria-label="Search" onChange={(e)=>setSearch(e.target.value)} />
+                          </div>
+                      </div>
+                      <div className='d-flex'>
+                        <div className='add-new-form-btn'>
+                        <CreateDriver/>  
+                        </div>
+                        <div className='Back-btn-01'><a href='#'>Back</a></div>
+                      </div>
                     </div>
-                    <div className='add-new-form-btn'>
-                      <CreateDriver/>            
-                    </div>
-                    
-                  </div>
                     <table class="table align-middle bg-white rounded m-0" id="table-to-xls">
                         <thead class="tableheading">
                           <tr>

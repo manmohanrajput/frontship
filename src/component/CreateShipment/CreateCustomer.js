@@ -96,7 +96,7 @@ function CreateCustomer() {
             <div className="admin-dashboard">
               <div className="title-header">
                 <h5 className="card-header-01 text-center">Create Customer</h5>
-                <ModalBody className="close-icon">
+                <ModalBody className="close-icon-01">
                   <AiOutlineClose
                     className="main_AiOutlineClose"
                     onClick={() => setModalIsOpen(false)}

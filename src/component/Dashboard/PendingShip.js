@@ -2,9 +2,7 @@ import React,{useState,useEffect} from 'react'
 import { AiOutlineClose } from "react-icons/ai";
 import axios from 'axios';
 import '../../css/dispatchlist.css'
-import Navbar from '../Navbar'
-import CreateDispatch from './CreateDispatch'
-
+import Navbar from '../Navbar';
 
 import {
   Nav,
@@ -71,7 +69,7 @@ async function deleteContact(ids,getContact,DefaultgetContact ){
   }
 
 
-function DispatchList() {
+function PendingShip() {
     const [rowCount, setRowCount] = useState(0);
     const [inquiries, setInquiries] = useState( );
     const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -155,7 +153,7 @@ function DispatchList() {
               </Button>
               &nbsp;
               <Button outline onClick={() => setModalIsOpenDelete(false)}>
-              Cancel
+                Cancle
               </Button>
             </div>
           </Form>
@@ -164,63 +162,51 @@ function DispatchList() {
     
   
   
-    <div class="rightdiv px-3 py-5">
-        <div class="container-fluid">
+    <div class="rightdiv px-3 py-2">
+        <div class="container-fluid table-header-title">
             <div class="row">
-            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 nameuser">
-                <h1>All Dispatcher List</h1>
-    
-        {/* <p>May 22, 2023</p>  */}
-                </div>
-                <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
-                    <div class="input-group input-group-lg">
+              <div class="w-50 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 nameuser">
+                <h2>Shipment Record</h2>
+              </div>
+              <div class="w-50 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+                  <div class="input-group input-group-lg">
                     <span style={{backgroundColor:"#fff"}} class="input-group-text" id="basic-addon1"><i class="bi bi-search" ></i></span>
-                 <input  style={{fontSize:"15px"}} className="form-control me-2 serch-filed" type="search" placeholder="Search Here" aria-label="Search" onChange={(e)=>setSearch(e.target.value)} />
-                      </div>
-                </div>
+                    <input  style={{fontSize:"15px"}} className="form-control me-2 serch-filed" type="search" placeholder="Search Here" aria-label="Search" onChange={(e)=>setSearch(e.target.value)} />
+                  </div>
+              </div>
              
             </div>
           
-            <div className="row mt-3">
+            <div className="row pt-0">
               <div className='col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 '>
               <Navbar/>
 
                     </div>
-                <div class="col view-table-new">
-                    {/* <div className='driver-view-list'>
-                      <div className=''>
-                        <h2>All Dispatcher List</h2>
-                      </div>
-                      <div className='add-new-form-btn'>
-                      <CreateDispatch/>          
-                      </div>
-                    </div> */}
-                    <div className='driver-view-list'>
+                <div class="col p-0 shipment-view-pending-cencal">
+                <div className='driver-view-list'>
                 
-                      <div className=''>
-                        <h2>All Dispatcher List</h2>
-                      </div>
-                      <div class="w-50 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
-                          <div class="input-group input-group-lg">
-                            <span style={{backgroundColor:"#fff"}} class="input-group-text" id="basic-addon1"><i class="bi bi-search" ></i></span>
-                            <input  style={{fontSize:"15px"}} className="form-control me-2 serch-filed" type="search" placeholder="Search Here" aria-label="Search" onChange={(e)=>setSearch(e.target.value)} />
-                          </div>
-                      </div>
-                      <div className='d-flex'>
-                        {/* <div className='add-new-form-btn'>
-                            <CreateHelper/>
-                        </div> */}
-                        <div className='Back-btn-01'><a href='#'>Back</a></div>
-                      </div>
+                <div className=''>
+                  <h2> Pending Shipment List</h2>
+                </div>
+                <div class="w-50 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+                    <div class="input-group input-group-lg">
+                      <span style={{backgroundColor:"#fff"}} class="input-group-text" id="basic-addon1"><i class="bi bi-search" ></i></span>
+                      <input  style={{fontSize:"15px"}} className="form-control me-2 serch-filed" type="search" placeholder="Search Here" aria-label="Search" onChange={(e)=>setSearch(e.target.value)} />
                     </div>
+                </div>
+                <div className='d-flex'>
+                  <div className='Back-btn-01'><a href='#'>Back</a></div>
+                </div>
+              </div>
                     <table class="table align-middle bg-white rounded m-0" id="table-to-xls">
                         <thead class="tableheading">
                           <tr>
-                            <th scope="col" class="borderre">Dispatcher ID</th>
-                            <th scope="col">Dispatcher Name</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Phone number</th>
-                            
+                            <th scope="col" class="borderre">No.</th>
+                            <th scope="col">Customer Name</th>
+                            <th scope="col">Order status</th>
+                            <th scope="col">Phone no.</th>
+                            <th scope="col">Pickup Location</th>
+                            <th scope="col">Drop Location</th>
                             <th scope="col" class="borderre1">Action</th>
                           </tr>
                         </thead>
@@ -234,12 +220,16 @@ function DispatchList() {
                  <th scope="row"><span className="dispatcher-id">{i+1}</span></th>
             {/* <td>{item.id}</td> */}
             <td>{item.name}</td>
+            <td><span className='ship-pending'>Pending</span></td>
             <td className="dis-email text-left">{item.email}</td>
+            
+            <td>{item.phone}</td>
             <td>{item.phone}</td>
             <td>
             {/* <button className="btn bt"><a href="#" class="eye"><i class="bi bi-pen"></i></a></button> */}
             <button className='btn btn1' onClick={()=>{setModalIsOpenEdit(true); setIds(item.id)}}><i class="bi bi-pen"></i></button>
-              <button className='btn bt' onClick={()=>{setModalIsOpenDelete(true); setIds(item.id);}}><i class="bi bi-trash delete"></i></button>
+            <button className='btn bt' onClick={()=>{setModalIsOpenDelete(true); setIds(item.id);}}><i class="bi bi-trash delete"></i></button>
+            <a href='/view'><button className='btn bt' ><i class="bi bi-eye"></i></button></a>
             </td>
             
           </tr>
@@ -289,6 +279,6 @@ function DispatchList() {
   }
 }
 
-export default DispatchList
+export default PendingShip;
 
 

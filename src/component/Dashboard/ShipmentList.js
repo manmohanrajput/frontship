@@ -19,24 +19,28 @@ function ShipmentList() {
 							</div>
 							<div class="col-md-6 border-left p-2">
 								<div class="card-body text-center p-2">
-                            
+                            <Link to='/delayd'>
 							    	<img src="/Assets/gif/sand-clock.gif"/>
 								    <p class="card-text">Delayed Shipment</p> 	
-                        
+									</Link>
 								</div>
 							</div>
 						</div>
 						<div class="row card-holder-py">
 							<div class="col-md-6 border-top-right">
 								<div class="card-body text-center p-2 mb-2">	
+								<Link to='/pending'>
 							    	<img src="/Assets/gif/pending.gif"/>
 								    <p class="card-text">Pending Shipment</p>
+									</Link>
 								</div>
 							</div>
 							<div class="col-md-6 border-top">
 								<div class="card-body text-center p-2 mb-2">
+								<Link to='/cancel'>
 							    	<img src="/Assets/gif/Canceled.gif"/>
 								    <p class="card-text">Canceled Shipment</p>
+									</Link>
 								</div>
 							</div>
 						</div>
