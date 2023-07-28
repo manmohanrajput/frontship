@@ -61,6 +61,7 @@ function Navbar() {
 					      <span class="navbar-toggler-icon"></span>
 					    </button>
 					</div>
+          
 				    <div class="" id="navbarScroll">
 				    	<div class="d-flex menu-container">
 					    	<div class="avtar">
@@ -69,13 +70,12 @@ function Navbar() {
 					    	</div>
 				    		<div class="notification">
                   <span className='tooltip-holder'>
-                      <span class="nav-tooltip">
-                      Notification
-                  </span>
-				    			    <img className='Notification-img' src="/Assets/Navbar/bell.png"/>
+                  <img className='Notification-img' src="/Assets/Navbar/bell.png"/>
+				    			   
                   </span>
                   
 				    			<ChangePass/>
+                  
 				    			
                                 <Nav>
           <div className='container d-flex justify-content-between'>
@@ -94,6 +94,7 @@ function Navbar() {
 			</div>
 		</nav>
 	</hrader>
+
     </div>
   )
 }

@@ -108,155 +108,161 @@ function DriverList() {
 
   return (
     <section class="homedive ">
-
-<Modal isOpen={modalIsOpenEdit} className='main_modal_body dispatcher-list-form'>
-                <ModalBody className='modal_body'>
-                <AiOutlineClose className='main_AiOutlineClose close-icon' onClick={()=>setModalIsOpenEdit(false)}/>
-                   <h5 className='main_h5'>Edit Driver List</h5>
-                </ModalBody>
-                <Form className='form_main '>
-                    <FormGroup>
-                        <Input type="text" name="name" id="name" placeholder="Edit Name" onBlur={(e) => handleInput(e)}/>
-                    </FormGroup>
-                    <FormGroup>
-                        <Input type="email" name="email" id="email" placeholder="Edit Email" onBlur={(e) => setEmail(e.target.value)}/>
-                    </FormGroup>
-                    <FormGroup>
-                        <Input type="number" name="phone" id="phone" placeholder="Edit Phone Number " onBlur={(e) => {setPhone(e.target.value); console.log(e.target.value);}} />
-                    </FormGroup>
-                    <FormGroup>
-                        <Input type="text" name="address" id="address" placeholder="Edit Address " onBlur={(e) => {setAddress(e.target.value); console.log(e.target.value);}} />
-                    </FormGroup>
-                    <p id="edit-validate-batch" style={{ color: 'red' }}></p>
-                    <Button variant="contained" className='main_botton' style={{backgroundColor: '#6A3187'}} onClick={() => updateBatch(ids,full_name,email,phone,address,setModalIsOpenEdit,getBatchList)}>Edit Driver List</Button>
-                </Form>
-            </Modal>
-
- <Modal isOpen={modalIsOpenDelete} className="modal_body-delete">
-          <ModalBody className="dispatcher-list-form">
-            <AiOutlineClose
-              className="main_AiOutlineClose close-icon"
-              onClick={() => setModalIsOpenDelete(false)}
-              color="black"
-            />
-          </ModalBody>
-          <Form className="">
-            <h3 style={{ color: "grey", textAlign: "center" }}>
-              Do you really want to delete?
-            </h3>
-            <div
-              className="d-flex justify-content-center"
-              style={{ marginBottom: "50px" }}
-            >
-              <Button
-                outline
-                onClick={() => {
-                    deleteContact(ids, getContact, DefaultgetContact)
-                  setModalIsOpenDelete(false);
-                }}
-              >
-                Yes
-              </Button>
-              &nbsp;
-              <Button outline onClick={() => setModalIsOpenDelete(false)}>
-                Cancle
-              </Button>
-            </div>
-          </Form>
-        </Modal>
-     
-    
-  
-  
-    <div class="rightdiv px-3 py-5">
-        <div class="container-fluid">
-            <div class="row">
-            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 nameuser">
-                <h1>All Driver List</h1>
-    
-        {/* <p>May 22, 2023</p>  */}
-                </div>
-                <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
-                    <div class="input-group input-group-lg">
-                    <span style={{backgroundColor:"#fff"}} class="input-group-text" id="basic-addon1"><i class="bi bi-search" ></i></span>
-                 <input  style={{fontSize:"15px"}} className="form-control me-2 serch-filed" type="search" placeholder="Search Here" aria-label="Search" onChange={(e)=>setSearch(e.target.value)} />
-                      </div>
-                </div>
-             
-            </div>
-          
+  <div class="rightdiv px-3 py-5">
+        <div class="container">
             <div className="row mt-3">
               <div className='col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 '>
               <Navbar/>
 
                     </div>
-                <div class="col view-table-new">
-                  <div className='driver-view-list'>
-                    <div className=''>
-                      <h2>All Driver List</h2>
-                    </div>
-                    <div className='add-new-form-btn'>
-                      <CreateDriver/>            
-                    </div>
-                    
+                <div class="col view-table-shipment">
+                    <div className='Back-btn'><a href='#'>Back</a></div>
+                  <div className='view-table-shipment-header'>
+                        <div className=''>
+                        <h2>All Driver List</h2>
+                        </div>
+                        <div className=''>
+                        <h2>All Driver List</h2>
+                        </div>
+                        <div className=''>
+                        <h2>All Driver List</h2>
+                        </div>
                   </div>
-                    <table class="table align-middle bg-white rounded m-0" id="table-to-xls">
-                        <thead class="tableheading">
-                          <tr>
-                            <th scope="col" class="borderre">Driver ID</th>
-                            <th scope="col">Driver Name</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Phone number</th>
-                            <th scope="col">Address</th>
-                            <th scope="col">password</th>
-                            <th scope="col">Total Driver</th>
+                  <div className='shipment-header-row'>
+                        <div className='column-one'>
+                            <div>
+                                <p className='shiping-label'>Customers Name <span>*</span></p>
+                                <p className='shiping-input'>Wade Warren</p>
+                            </div>
+                            <div>
+                                <p className='shiping-label'>Pick up Location <span>*</span></p>
+                                <p className='shiping-input'>8502 Preston Rd. Inglewood, Maine 98380</p>
+                            </div>
+                            <div>
+                                <p className='shiping-label'>Pick up POD Details <span>*</span></p>
+                                <p className='shiping-img-pre'>
+                                    <img src="/Assets/dashboard/shipment-view.png" />
+                                </p>
+                            </div>
                             
-                            <th scope="col" class="borderre1">Action</th>
-                          </tr>
-                        </thead>
-                      <tbody class="tbody">
-  
-        {
-          records.filter((item)=>{
-            return search.toLowerCase() === '' ? item : item.full_name.toLowerCase().includes(search)
-          }).map((item,i)=>
-            <tr key={i}>
-                 <th scope="row"><span className="dispatcher-id">{i+1}</span></th>
-            {/* <td>{item.id}</td> */}
-            <td>{item.full_name}</td>
-            <td className="dis-email text-left">{item.email}</td>
-            <td>{item.phone}</td>
-            <td>{item.address}</td>
-            <td>{item.password}</td>
-
-            <td>12</td>
-            <td>
-            {/* <button className="btn bt"><a href="#" class="eye"><i class="bi bi-pen"></i></a></button> */}
-            <button className='btn btn1' onClick={()=>{setModalIsOpenEdit(true); setIds(item.id)}}><i class="bi bi-pen"></i></button>
-              <button className='btn bt' onClick={()=>{setModalIsOpenDelete(true); setIds(item.id);}}><i class="bi bi-trash delete"></i></button>
-            </td>
-            
-          </tr>
-          )
-        }
-                    </tbody>
-                  </table>
+                        </div>
+                        <div className='column-two'>
+                        <div>
+                                <p className='shiping-label'>Customer’s Contact Number<span>*</span></p>
+                                <p className='shiping-input'>(219) 555-0114</p>
+                            </div>
+                            <div>
+                                <p className='shiping-label'>Pick up date & time<span>*</span></p>
+                                <p className='shiping-input'>12 Jul, 12:23 PM</p>
+                            </div>
+                            <div>
+                                <p className='shiping-label'>Dispatcher ID <span>*</span></p>
+                                <p className='shiping-img-pre'>
+                                    <img src="/Assets/dashboard/shipment-view.png" />
+                                </p>
+                            </div>
+                        </div>
+                        <div className='column-three'>
+                        <div>
+                                <p className='shiping-label'>Customer’s Email Number <span>*</span></p>
+                                <p className='shiping-input'>nathan.roberts@example.com</p>
+                            </div>
+                            <div>
+                                <p className='shiping-label'>Description<span>*</span></p>
+                                <p className='shiping-input'>Lorem ipsum dolor sit amet consectetur. Varius posuere lacus lectus quisque </p>
+                            </div>
+                            <div>
+                                <p className='shiping-label'>Sign DC Dispatcher <span>*</span></p>
+                                <p className='shiping-img-pre'>
+                                    <img src="/Assets/dashboard/shipment-view.png" />
+                                </p>
+                            </div>
+                        </div>
+                        
+                  </div>
+                  <div className='shipment-header-row'>
+                        <div className='column-one'>
+                            <div>
+                                <p className='shiping-label'>Customers Name<span>*</span></p>
+                                <p className='shiping-input'>Cameron Williamson</p>
+                            </div>
+                            <div>
+                                <p className='shiping-label'>Drop Location<span>*</span></p>
+                                <p className='shiping-input'>2715 Ash Dr. San Jose, South Dakota 83475</p>
+                            </div>
+                            <div>
+                                <p className='shiping-label'>POD Stamp <span>*</span></p>
+                                <p className='shiping-img-pre'>
+                                    <img src="/Assets/dashboard/shipment-view.png" />
+                                </p>
+                            </div>
+                            
+                        </div>
+                        <div className='column-two'>
+                        <div>
+                                <p className='shiping-label'>Customer’s Contact Number<span>*</span></p>
+                                <p className='shiping-input'>(808) 555-0111</p>
+                            </div>
+                            <div>
+                                <p className='shiping-label'>Drop date <span>*</span></p>
+                                <p className='shiping-input'>12 Jul</p>
+                            </div>
+                            <div>
+                                <p className='shiping-label'>Receivers ID <span>*</span></p>
+                                <p className='shiping-img-pre'>
+                                    <img src="/Assets/dashboard/shipment-view.png" />
+                                </p>
+                            </div>
+                        </div>
+                        <div className='column-three'>
+                        <div>
+                                <p className='shiping-label'>Customer’s Email Number* <span>*</span></p>
+                                <p className='shiping-input'>jackson.graham@example.com</p>
+                            </div>
+                            <div>
+                                <p className='shiping-label'>Description <span>*</span></p>
+                                <p className='shiping-input'>Lorem ipsum dolor sit amet consectetur. Varius posuere lacus lectus quisque </p>
+                            </div>
+                            <div>
+                                <p className='shiping-label'>Receivers Signature<span>*</span></p>
+                                <p className='shiping-img-pre'>
+                                    <img src="/Assets/dashboard/shipment-view.png" />
+                                </p>
+                            </div>
+                        </div>
+                        
+                  </div>
+                  <div className='shipment-header-row pb-5'>
+                        <div className='column-one'>
+                            <div>
+                                <p className='shiping-label'>Driver Name<span>*</span></p>
+                                <p className='shiping-input'>Jacob Jones</p>
+                            </div>
+                            <div>
+                                <p className='shiping-label'>Vehicle Plate<span>*</span></p>
+                                <p className='shiping-input'>#CBWE12</p>
+                            </div>
+                            
+                        </div>
+                        <div className='column-two'>
+                        <div>
+                                <p className='shiping-label'>Helper1 Name<span>*</span></p>
+                                <p className='shiping-input'>Cody Fisher</p>
+                            </div>
+                            <div>
+                                <p className='shiping-label'>Created by<span>*</span></p>
+                                <p className='shiping-input'>Admin</p>
+                            </div>
+                        </div>
+                        <div className='column-three'>
+                        <div>
+                                <p className='shiping-label'>Helper2 Name <span>*</span></p>
+                                <p className='shiping-input'>Bessie Cooper</p>
+                            </div>
+                        </div>
+                        
+                  </div>
                <nav>
-        <ul className='pagination'>
-           <li className='page-item'>
-            <a href='#' className='page-link' onClick={prePage}>Previous</a>
-           </li>
-           {
-            numbers.map((n,i)=>{
-              <li className={`page-item ${currentPage === n ? 'active' : ''}`} key={i}>
-              <a href='#' className='page-link' onClick={()=>changeCPage(n)}>{n}</a>
-              </li>
-            })
-           }
-             <li className='page-item'>
-            <a href='#' className='page-link' onClick={nextPage}>Next</a>
-           </li>
-        </ul>
       </nav>
                 </div>
 

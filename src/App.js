@@ -21,6 +21,12 @@ const paymentRecords = React.lazy(() => import("./component/Dashboard/PaymentRec
 const settlementRecord = React.lazy(() => import("./component/Dashboard/SettlementRecords"))
 const settlementHistory = React.lazy(() => import("./component/Dashboard/SettlementHistory"))
 const ViewShipment = React.lazy(() => import("./component/Dashboard/ViewShipment"))
+const DelaydShip = React.lazy(() => import("./component/Dashboard/DelaydShip"))
+const PendingShip = React.lazy(() => import("./component/Dashboard/PendingShip"))
+const CancelShip = React.lazy(() => import("./component/Dashboard/CancelShip"))
+
+
+
 
 
 
@@ -47,6 +53,9 @@ function App() {
             <Route  exact path="/settlementRecord" element={<SettlementRecords/>}/>
             <Route  exact path="/settlementhistory" element={<SettlementHistory/>}/>
             <Route  exact path="/view" element={<ViewShipment />}/>
+            <Route  exact path="/delayd" element={<DelaydShip/>}/>
+            <Route  exact path="/pending" element={<PendingShip/>}/>
+            <Route  exact path="/cancel" element={<CancelShip/>}/>
 
 
           </Routes>
