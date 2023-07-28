@@ -20,8 +20,8 @@ li.page-item a {
     font-weight: 500;
 }
 .tableheading th {
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 12px;
+    font-weight: 700;
     line-height: 40px;
     padding: 7px 28px;
 }
@@ -30,6 +30,7 @@ li.page-item a {
 }
 .tbody th, .tbody td {
     padding: 12px 30px;
+    font-size: 14px;
 }
 .dispatcher-list-form .modal_body.modal-body {
     background-color: gainsboro;
@@ -66,5 +67,52 @@ form.form_main {
 table#table-to-xls {
     z-index: 9;
     position: relative;
-    margin-top: 50px !important;
+}
+thead.tableheading{
+    position: relative;
+}
+.view-table-new {
+    margin-top: 25px;
+}
+/* thead.tableheading:before {
+    position: absolute;
+    content: "";
+    background-color: #efefef;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    border-radius: 10px 10px 0 0;
+} */
+.driver-view-list {
+    background-color: #efefef;
+    z-index: 9;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 28px;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: -8px;
+    align-items: center;
+}
+.add-new-form-btn .d-flex.create-dispatcher.align-items-center {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.driver-view-list h2 {
+    font-size: 20px;
+    font-weight: 500;
+}
+.create-dispatcher {
+    background-color: #1b2644;
+    padding: 10px 20px 10px;
+    color: #fff;
+    border-radius: 8px;
+    margin-top: 10px;
+    text-align: center;
+    justify-content: center;
+}
+input::placeholder{
+    color: #6B7DB1;
 }

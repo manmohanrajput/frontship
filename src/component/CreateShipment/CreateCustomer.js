@@ -5,13 +5,13 @@ import axios from "axios";
 import { Nav, NavItem, Form, Button, Modal, ModalBody } from "reactstrap";
 import { Link } from "react-router-dom";
 
-function CreateDispatch() {
+function CreateCustomer() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [password, setPassword] = useState("");
+  const [altphone, setAltphone] = useState("");
 
   
   const [error, setError] = useState(false);
@@ -24,7 +24,7 @@ function CreateDispatch() {
       name,
       email,
       phone,
-      password,
+      altphone,
       //   date:fullDate,
     };
 
@@ -32,7 +32,7 @@ function CreateDispatch() {
       name.length == 0 ||
       email.length == 0 ||
       phone.length == 10 ||
-      password.length == 0
+      altphone.length == 10
     ) {
       setError(true);
       setSuccbtn(
@@ -41,9 +41,9 @@ function CreateDispatch() {
         </span>
       );
     }
-    if (name&&email&&phone&&password) {
+    if (name&&email&&phone&&altphone) {
       fetch(
-           "https://shippment-dfx.onrender.com/api/addispatcher",
+           "https://shippment-dfx.onrender.com/api/addcustomer",
         {
           method: "POST",
           headers: {
@@ -72,7 +72,7 @@ function CreateDispatch() {
           <div className="">
             <div className="admin-dashboard">
               <div className="title-header">
-                <h5 className="card-header-01 text-center">Create Dispatcher</h5>
+                <h5 className="card-header-01 text-center">Create Customer</h5>
                 <ModalBody className="close-icon">
                   <AiOutlineClose
                     className="main_AiOutlineClose"
@@ -83,10 +83,10 @@ function CreateDispatch() {
               </div>
               <div className="row card-holder">
                 <form className="form-control-holder"  onSubmit={handleSubmit}>
-                  <div className="row">
-                  <div className="mb-4">
+                    <div className="row">
+                  <div className="mb-4 w-50">
                     <label for="exampleInputEmail1" className="form-label">
-                      Full name<span className="stra-icon">*</span>
+                      Customer Name<span className="stra-icon">*</span>
                     </label>
                     <input
                       name="full_name"   
@@ -97,9 +97,9 @@ function CreateDispatch() {
                     />
                {error && name.length<=0?<span className="valid-form" style={{color:'red'}}>Please Enter full name*</span>:""}
                   </div>
-                  <div className="mb-4">
+                  <div className="mb-4 w-50">
                     <label className="form-label">
-                      Email<span className="stra-icon">*</span>
+                     Customer Email<span className="stra-icon">*</span>
                     </label>
                     <input
                       name="email"   
@@ -112,9 +112,10 @@ function CreateDispatch() {
 
                   </div>
                   </div>
-                  <div className="mb-4">
+                  <div className="row">
+                  <div className="mb-4 w-50">
                     <label className="form-label">
-                      Phone Number<span className="stra-icon">*</span>
+                    Customer Contact Number<span className="stra-icon">*</span>
                     </label>
                     <input
                        name="phone"   
@@ -126,22 +127,23 @@ function CreateDispatch() {
                      {error && phone.length <= 0 ?<span className="valid-form" style={{color:'red'}}>Please Enter the 10 Digit number*</span>:""}
 
                   </div>
-                  <div className="mb-4">
+                  <div className="mb-4 w-50">
                     <label className="form-label">
-                      Password<span className="stra-icon">*</span>{" "}
+                    Customer Alternate Number<span className="stra-icon">*</span>{" "}
                     </label>
                     <input
-                       name="password"   
-                       onChange={(e)=> setPassword(e.target.value)}          
-                       id="password"
-                       placeholder="Enter your password"
-                       type="password"
+                       name="phone"   
+                       onChange={(e)=> setAltphone(e.target.value)}          
+                       id="phone"
+                       placeholder="Enter your Alternate Number"
+                       type="number"
                     />
-                  {error && password.length <= 0 ?<span className="valid-form" style={{color:'red'}}>Create your password*</span>:""}
+                  {error && altphone.length <= 0 ?<span className="valid-form" style={{color:'red'}}>Please Enter the 10 Digit number*</span>:""}
 
                   </div>
+                  </div>
                   <button type="submit" className="submit-btn"  value="Send Message">
-                    Create Dispatcher
+                    Create Customer
                   </button>
                   <div className="succbtn mb-4" >{succbtn ? <p>{succbtn}</p> : null}</div>
                 </form>
@@ -154,7 +156,7 @@ function CreateDispatch() {
         <div className="plus-icon">
           <button type="submit" onClick={() => setModalIsOpen(true)}>
             <img src="/Assets/dash/plus.png" />
-          Dispatcher
+            Create Customer
           </button>
         </div>
       </div>
@@ -162,4 +164,4 @@ function CreateDispatch() {
   );
 }
 
-export default CreateDispatch;
+export default CreateCustomer;

@@ -141,8 +141,7 @@ useEffect(() => {
       );
     }
     if (custoname&&custonum&&droplocation&&dropdate&&selectshipment&&droplocation&&adddesc&&vehicleplate&&helper&&assigndriver) {
-      fetch(
-           "http://localhost:5000/deleverycreation/adddeliverycreation",
+      fetch("https://shippment-dfx.onrender.com/api/adddeliverycreation",
         {
           method: "POST",
           headers: {

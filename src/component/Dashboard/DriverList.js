@@ -3,6 +3,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import axios from 'axios';
 import '../../css/dispatchlist.css'
 import Navbar from '../Navbar'
+import CreateDriver from './CreateDriver'
 
 
 import {
@@ -36,7 +37,7 @@ async function ContactData(getContact){
 
 async function updateBatch(id,full_name,email,phone,address,setModalIsOpenEdit,getBatchList){
   if (full_name != "" && email != "" && phone != "" && address != "") {
-      await axios.post('https://shippment-dfx.onrender.com/driver/updatedriver',
+      await axios.post('https://shippment-dfx.onrender.com/api/updatedriver',
       {inst_hash: localStorage.getItem('inst_hash'),
       id : id,
       full_name: full_name,
@@ -57,7 +58,7 @@ async function updateBatch(id,full_name,email,phone,address,setModalIsOpenEdit,g
 
 //************************************************************** */
 async function deleteContact(ids,getContact,DefaultgetContact ){
-  const results = await axios.post('https://shippment-dfx.onrender.com/driver/deldriver',
+  const results = await axios.post('https://shippment-dfx.onrender.com/api/deldriver',
       {
           id:ids
       },
@@ -189,7 +190,16 @@ function DriverList() {
               <Navbar/>
 
                     </div>
-                <div class="col">
+                <div class="col view-table-new">
+                  <div className='driver-view-list'>
+                    <div className=''>
+                      <h2>All Driver List</h2>
+                    </div>
+                    <div className='add-new-form-btn'>
+                      <CreateDriver/>            
+                    </div>
+                    
+                  </div>
                     <table class="table align-middle bg-white rounded m-0" id="table-to-xls">
                         <thead class="tableheading">
                           <tr>

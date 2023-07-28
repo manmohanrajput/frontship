@@ -152,3 +152,6 @@ tbody td.d-flex.align-items-center {
 .tbody div {
     font-size: 12px;
 }
+input::placeholder{
+    color: #6B7DB1;
+}

@@ -1,6 +1,7 @@
 import React from 'react'
 import '../../css/shipmentlist.css'
 import { Link } from "react-router-dom";
+import TransferMoneyToDriver from '../Dashboard/TransferMoneyToDriver'
 
 
 function ShipmentList() {
@@ -57,53 +58,81 @@ function ShipmentList() {
                                     </Link>
 								</div>
 							</div>
-							<div class="col-md-6 border-left">
-								<div class="card-body text-center py-2">
-                                    <Link to="/helperList">
-							    	<img src="/Assets/gif/policeman.gif"/>
-								    <p class="card-text">Helper List</p>
-                                    </Link>
-								</div>
-							</div>
-							<div class="col-md-6 border-left">
-								<div class="card-body text-center py-2">
-                                    <Link to="/vehicalList">
-							    	<img src="/Assets/gif/policeman.gif"/>
-								    <p class="card-text">Vehical List</p>
-                                    </Link>
-								</div>
-							</div>
-						</div>
-						<h5 class="card-header-02 text-center">Payments</h5>
-						<div class="row card-holder-py">
 							<div class="col-md-6 border-right">
-								<div class="card-body text-center p-2">
-							    	<img src="/Assets/gif/ewallet.gif"/>	
-							    	<p class="card-text">Payment Records</p>
-								</div>
-							</div>
-							<div class="col-md-6 border-left">
-								<div class="card-body text-center p-2">
-							    	<img src="/Assets/gif/wallet.gif"/>	
-								    <p class="card-text">Transfer money to Driver</p>
+								<div class="card-body text-center py-2">
+                                    <Link to="/customerList">
+							    	<img src="/Assets/gif/policeman.gif"/>
+								    <p class="card-text">Customer List</p>
+                                    </Link>
 								</div>
 							</div>
 						</div>
 						<h5 class="card-header-02 text-center">Helper and Vehicle list</h5>
 						<div class="row card-holder-py">
+							
+
 							<div class="col-md-6 border-right">
 								<div class="card-body text-center p-2">
+									<Link to="/helperList">
+										<img src="/Assets/gif/ewallet.gif"/>	
+										<p class="card-text">Helper List</p>
+									</Link>
+								</div>
+							</div>
+
+							<div class="col-md-6 border-left">
+								<div class="card-body text-center p-2">
+									<Link to="/vehicalList">
+										<img src="/Assets/gif/wallet.gif"/>	
+										<p class="card-text">Vehicle List</p>
+									</Link>
+								</div>
+							</div>
+
+
+						</div>
+						
+						<h5 class="card-header-02 text-center">Payments</h5>
+						<div class="row card-holder-py">
+						<div class="col-md-6 border-right">
+								<div class="card-body text-center p-2">
+								<Link to="/paymentRecords">
+
 							    	<img src="/Assets/gif/ewallet.gif"/>	
-							    	<p class="card-text">Helper List</p>
+							    	<p class="card-text">Payment Records</p>
+									</Link>
+
+								</div>
+							</div>
+							
+
+
+							<div class="col-md-6 border-left">
+								<div class="card-body text-center p-2">
+							    	<img src="/Assets/gif/wallet.gif"/>	
+								    <p class="card-text"><TransferMoneyToDriver/></p>
+								</div>
+							</div>
+						</div>
+						<div class="row card-holder-py">
+							<div class="col-md-6 border-right">
+								<div class="card-body text-center p-2">
+									<Link to="/settlementRecord">
+										<img src="/Assets/gif/ewallet.gif"/>	
+										<p class="card-text">Settlement Record</p>
+									</Link>
 								</div>
 							</div>
 							<div class="col-md-6 border-left">
 								<div class="card-body text-center p-2">
-							    	<img src="/Assets/gif/wallet.gif"/>	
-								    <p class="card-text">Vehicle List</p>
+									<Link to="/settlementhistory">
+										<img src="/Assets/gif/wallet.gif"/>	
+										<p class="card-text">Settlement History</p>
+									</Link>
 								</div>
 							</div>
 						</div>
+						
 					</div>
 				</div>
     </div>

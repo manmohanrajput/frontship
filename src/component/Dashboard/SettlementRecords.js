@@ -70,7 +70,7 @@ async function deleteContact(ids,getContact,DefaultgetContact ){
   }
 
 
-function HelperList() {
+function SettlementRecords() {
     const [rowCount, setRowCount] = useState(0);
     const [inquiries, setInquiries] = useState( );
     const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -111,7 +111,7 @@ function HelperList() {
 <Modal isOpen={modalIsOpenEdit} className='main_modal_body dispatcher-list-form'>
                 <ModalBody className='modal_body'>
                 <AiOutlineClose className='main_AiOutlineClose close-icon' onClick={()=>setModalIsOpenEdit(false)}/>
-                   <h5 className='main_h5'>Edit Driver List</h5>
+                   <h5 className='main_h5'>Settlement Record List</h5>
                 </ModalBody>
                 <Form className='form_main '>
                     <FormGroup>
@@ -171,7 +171,7 @@ function HelperList() {
         <div class="container-fluid">
             <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 nameuser">
-                <h2>All Helper List</h2>
+                <h2>Settlement Record List</h2>
     
         {/* <p>May 22, 2023</p>  */}
                 </div>
@@ -192,7 +192,7 @@ function HelperList() {
                 <div class="col view-table-new">
                 <div className='driver-view-list'>
                       <div className=''>
-                        <h2>All Helper List</h2>
+                        <h2>Settlement Record List</h2>
                       </div>
                       <div className='add-new-form-btn'>
                       <CreateHelper/>        
@@ -278,6 +278,6 @@ function HelperList() {
   }
 }
 
-export default HelperList;
+export default SettlementRecords;
 
 

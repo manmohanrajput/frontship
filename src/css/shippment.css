@@ -257,3 +257,7 @@ span.stra-icon {
 .row.card-holder-py {
     padding: 0 15px;
 }}
+
+input::placeholder{
+    color: #6B7DB1;
+}
