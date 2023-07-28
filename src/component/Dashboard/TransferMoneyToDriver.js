@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from 'react';
+
 import { AiOutlineClose } from "react-icons/ai";
 // import "../../css/shippment.css";
 import '../../css/transfermoneytodriver.css'
@@ -9,60 +10,65 @@ import { Link } from "react-router-dom";
 function TransferMoneyToDriver() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [password, setPassword] = useState("");
+  const [full_name, setFullname] = useState("");
+  const [shipment_id, setShipmentid] = useState("");
+  const [amount, setAmount] = useState("");
+  // const [shipment, setShipment] = useState("");
 
   
   const [error, setError] = useState(false);
   const [modalPrivacy, setModalPrivacy] = useState(false);
   const [succbtn, setSuccbtn] = useState();
 
+
+  const [drivers, setDrivers] = useState([]);
+  const [selectedDriver, setSelectedDriver] = useState('');
+
+  useEffect(() => {
+    // Fetch the data from the API
+    axios.get('https://shippment-dfx.onrender.com/api/driver')
+      .then(response => {
+        setDrivers(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
+
+  const handleDriverChange = (event) => {
+    setSelectedDriver(event.target.value);
+  };
+  const currentDate = new Date().toLocaleString('en-IN', {
+    timeZone: 'Asia/Kolkata',
+    hour12: true,
+  });
+  // const currentDate = new Date().toISOString().slice(0, 19).replace('T', ' ');
   const handleSubmit = async (e) => {
     e.preventDefault();
     const dataToSubmit = {
-      name,
-      email,
-      phone,
-      password,
-      //   date:fullDate,
+      full_name: selectedDriver,
+      shipment_id,
+      amount,
+      DateAndTime: currentDate, // Adding current date and time to the data object
+
     };
 
-    if (
-      name.length == 0 ||
-      email.length == 0 ||
-      phone.length == 10 ||
-      password.length == 0
-    ) {
+    if (selectedDriver === '' || shipment_id === '' || amount === '') {
       setError(true);
-      setSuccbtn(
-        <span className="" style={{ color: "green" }}>
-          Submit Succesfully
-        </span>
-      );
-    }
-    if (name&&email&&phone&&password) {
-      fetch(
-           "https://shippment-dfx.onrender.com/api/addispatcher",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(dataToSubmit),
-        }
-      )
-        .then((res) => res.json())
-        .then((res) => {
-          console.log(res, dataToSubmit);
-        });
+      setSuccbtn(<span className="" style={{ color: 'red' }}>Please fill all the fields</span>);
     } else {
-      setSuccbtn(
-        <span className="" style={{ color: "red" }}>
-          Please fill all the field
-        </span>
-      );
+      setError(false);
+      setSuccbtn('');
+      axios.post('https://shippment-dfx.onrender.com/api/payment', dataToSubmit)
+        .then((response) => {
+          console.log(response.data);
+          setSuccbtn(<span className="" style={{ color: 'green' }}>Submitted Successfully</span>);
+    setModalIsOpen(false);
+        })
+        .catch((error) => {
+          console.error('Error submitting data:', error);
+          setSuccbtn(<span className="" style={{ color: 'red' }}>Failed to submit data</span>);
+        });
     }
   };
 
@@ -83,34 +89,40 @@ function TransferMoneyToDriver() {
                 </ModalBody>
               </div>
               <div className="row card-holder">
-                <form className="form-control-holder"  onSubmit={handleSubmit} >
+                <form className="form-control-holder" onSubmit={handleSubmit} >
                     
                   <div className="d-flex Transfer-form">
                   <div className="mb-4">
                     <label for="exampleInputEmail1" className="form-label">
                     Driver Name<span className="stra-icon">*</span>
                     </label>
-                    <input
-                      name="full_name"   
-                      onChange={(e)=> setName(e.target.value)}          
-                      id="first_name"
-                      placeholder="Enter Name"
-                      type="text"
-                    />
-               {error && name.length<=0?<span className="valid-form" style={{color:'red'}}>Please Enter full name*</span>:""}
+                  
+                    <select name="full_name"  id="full_name" onChange={handleDriverChange} value={selectedDriver}>
+                    
+        <option  value="">Select a driver</option>
+        {drivers.map((driver) => (
+          <option key={driver.id} value={driver.full_name}>
+            {driver.full_name}
+          </option>
+        ))}
+      </select>
+
+
+               {/* {error && full_name.length<=0?<span className="valid-form" style={{color:'red'}}>Please Select Driver*</span>:""} */}
                   </div>
                   <div className="mb-4">
                     <label className="form-label">
                     Shipment ID<span className="stra-icon">*</span>
                     </label>
-                    <input
-                       name="phone"   
-                       onChange={(e)=> setPhone(e.target.value)}          
-                       id="phone"
+                    <input 
+                       name="shipment_id"   
+                       onChange={(e)=> setShipmentid(e.target.value)}          
+                       id="shipment_id"
                        placeholder="Enter Shipment ID"
                        type="number"
                     />
-                     {error && phone.length <= 0 ?<span className="valid-form" style={{color:'red'}}>Please Enter the 10 Digit number*</span>:""}
+                    
+                     {error && shipment_id.length <= 0 ?<span className="valid-form" style={{color:'red'}}>Please Enter Shipment ID*</span>:""}
 
                   </div>
                   </div>
@@ -120,13 +132,13 @@ function TransferMoneyToDriver() {
                     Transfer Amount<span className="stra-icon">*</span>
                     </label>
                     <input
-                       name="phone"   
-                       onChange={(e)=> setPhone(e.target.value)}          
-                       id="phone"
+                       name="amount"   
+                       onChange={(e)=> setAmount(e.target.value)}          
+                       id="amount"
                        placeholder="Enter Amount"
                        type="number"
                     />
-                     {error && phone.length <= 0 ?<span className="valid-form" style={{color:'red'}}>Please Enter the 10 Digit number*</span>:""}
+                     {error && amount.length <= 0 ?<span className="valid-form" style={{color:'red'}}>Please Enter Amount*</span>:""}
 
                   </div>
                   <button type="submit" className="submit-btn"  value="Send Message">

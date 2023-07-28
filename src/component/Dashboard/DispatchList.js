@@ -58,7 +58,7 @@ async function updateBatch(id,name,email,phone,setModalIsOpenEdit,getBatchList){
 
 //************************************************************** */
 async function deleteContact(ids,getContact,DefaultgetContact ){
-  const results = await axios.post('https://shippment-dfx.onrender.com/api/dispatcher',
+  const results = await axios.post('https://shippment-dfx.onrender.com/api/deldispatcher',
       {
           id:ids
       },
@@ -155,7 +155,7 @@ function DispatchList() {
               </Button>
               &nbsp;
               <Button outline onClick={() => setModalIsOpenDelete(false)}>
-                Cancle
+              Cancel
               </Button>
             </div>
           </Form>

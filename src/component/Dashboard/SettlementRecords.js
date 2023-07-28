@@ -158,7 +158,7 @@ function SettlementRecords() {
               </Button>
               &nbsp;
               <Button outline onClick={() => setModalIsOpenDelete(false)}>
-                Cancle
+              Cancel
               </Button>
             </div>
           </Form>

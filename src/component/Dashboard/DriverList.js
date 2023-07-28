@@ -37,7 +37,7 @@ async function ContactData(getContact){
 
 async function updateBatch(id,full_name,email,phone,address,setModalIsOpenEdit,getBatchList){
   if (full_name != "" && email != "" && phone != "" && address != "") {
-      await axios.post('https://shippment-dfx.onrender.com/driver/updatedriver',
+      await axios.post('https://shippment-dfx.onrender.com/api/updatedriver',
       {inst_hash: localStorage.getItem('inst_hash'),
       id : id,
       full_name: full_name,
@@ -58,7 +58,7 @@ async function updateBatch(id,full_name,email,phone,address,setModalIsOpenEdit,g
 
 //************************************************************** */
 async function deleteContact(ids,getContact,DefaultgetContact ){
-  const results = await axios.post('https://shippment-dfx.onrender.com/driver/deldriver',
+  const results = await axios.post('https://shippment-dfx.onrender.com/api/deldriver',
       {
           id:ids
       },
@@ -159,7 +159,7 @@ function DriverList() {
               </Button>
               &nbsp;
               <Button outline onClick={() => setModalIsOpenDelete(false)}>
-                Cancle
+              Cancel
               </Button>
             </div>
           </Form>

@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import { AiOutlineClose } from "react-icons/ai";
 import "../css/navbar.css"
 import ChangePass from './ChangePass';
+import Tooltip from './CreateShipment/DriverDropdown.js';
 
 import {
     Nav,
@@ -68,7 +69,10 @@ function Navbar() {
 				    			<img src="/Assets/Navbar/avtar.png"/>
 					    		<a class="nav-link" href="#">Admin</a>
 					    	</div>
+
+
 				    		<div class="notification">
+
                   <span className='tooltip-holder'>
                   <img className='Notification-img' src="/Assets/Navbar/bell.png"/>
 				    			   
@@ -76,12 +80,22 @@ function Navbar() {
                   
 				    			<ChangePass/>
                   
+                <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Notification">
+				    			<img src="/Assets/Navbar/bell.png"/>
+
+                </span>
+                <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Edit Password">
+				    			<ChangePass/>
+                  </span>
+
 				    			
                                 <Nav>
           <div className='container d-flex justify-content-between'>
            <Link to="/">
            <NavItem>
+           <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Logout">
            <img src="/Assets/Navbar/log-out.png" onClick={() => setModalIsOpen(true)}/>
+           </span>
             </NavItem>
            </Link>
           
