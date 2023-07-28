@@ -32,15 +32,14 @@ async function ContactData(getContact){
   })
 }
 //************************************************************** */
-async function addBatch(name,email,vehicalplate,phone,setModalIsOpen,getBatchList){
-  if (name != "" && email != "" && vehicalplate!= "" && phone!= "" ) {
+async function addBatch(name,vehicalplate,setModalIsOpen,getBatchList){
+  if (name != "" && vehicalplate!= "" ) {
     await axios.post('https://shippment-dfx.onrender.com/api/addvehical',
     {
         inst_hash: localStorage.getItem('name'),
         name: name,
-       email: email,
        vehicalplate:vehicalplate,
-       phone:phone
+       
     },
     {headers: { authorization:`Bearer ${localStorage.getItem('token')}` }}    
     )
@@ -143,7 +142,7 @@ function Createvehical() {
                     </div>
                   </div>
                     <p id="validate-batch" style={{ color: 'red' }}></p>
-                    <Button variant="contained" className='main_botton  submit-btn' onClick={() => addBatch(name,email,vehicalplate,phone,setModalIsOpen,getBatchList)}>Create Vehical</Button>
+                    <Button variant="contained" className='main_botton  submit-btn' onClick={() => addBatch(name,vehicalplate,setModalIsOpen,getBatchList)}>Create Vehical</Button>
 
                 </Form>
             </Modal>

@@ -43,7 +43,7 @@ function CreateCustomer() {
     }
     if (name&&email&&phone&&altphone) {
       fetch(
-           "http://localhost:5000/createcustomer/addcustomer",
+           "https://shippment-dfx.onrender.com/api/addcustomer",
         {
           method: "POST",
           headers: {
