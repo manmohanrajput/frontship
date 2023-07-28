@@ -52,7 +52,7 @@ function DeliveryCreation() {
     }
     if (custoname&&custoemail&&custocontactnum&&custoaltnum&&pickuplocation&&droplocation&&description) {
       fetch(
-           "https://shippment-dfx.onrender.com/api/addcreatshipment",
+           "https://shippment-dfx.onrender.com/api/adddeliverycreation",
         {
           method: "POST",
           headers: {
