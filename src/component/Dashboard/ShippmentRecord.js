@@ -54,7 +54,7 @@ async function updateBatch(id,name,email,phone,setModalIsOpenEdit,getBatchList){
 
 //************************************************************** */
 async function deleteContact(ids,getContact,DefaultgetContact ){
-  const results = await axios.post('https://shippment-dfx.onrender.com/api/deldispatcher',
+  const results = await axios.post('http://localhost:5000/deleverycreation/deltotalshipmentrecord',
       {
           id:ids
       },
@@ -206,7 +206,7 @@ function DispatchList() {
             <tr key={i}>
                  <th scope="row"><span className="dispatcher-id">{i+1}</span></th>
             <td>{item.id}</td>
-            <td>{item.assigndriver}</td>
+            <td>{item.assigndriver}<br></br>Id:{item.assigndriverid}</td>
             <td className="dis-email text-left">{item.droplocation}<br></br>{item.dropdate}<br></br></td>
             <td>pending</td>
             <td>{item.vehicleplate}</td>

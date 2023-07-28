@@ -9,7 +9,7 @@ import DeliveryCreation from "./DeliveryCreation";
 
 async function ContactData(getContact,id){
 
-  await axios.get('http://localhost:5000/dispatcher/dispatcher',
+  await axios.get('https://shippment-dfx.onrender.com/api/dispatcher',
   {
     headers: { authorization: `Bearer ${localStorage.getItem('token')}` },
   }
@@ -85,7 +85,7 @@ function CreateShipment() {
     }
     if (dispatchname&&discontactnum&&disaltnum&&dispatchemail&&pickuplocation&&pickupbeforedate&&selectshipment&&adddescription) {
       fetch(
-           "http://localhost:5000/pickupcreation/addtotalshipmentrecord",
+           "https://shippment-dfx.onrender.com/api/addtotalshipmentrecord",
         {
           method: "POST",
           headers: {

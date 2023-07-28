@@ -46,7 +46,7 @@ async function helperData(getHelper,id){
 
 async function assigndriverData(getAssigndrive,id){
 
-  await axios.get('http://localhost:5000/api/driver',
+  await axios.get('https://shippment-dfx.onrender.com/api/driver',
   {
     headers: { authorization: `Bearer ${localStorage.getItem('token')}` },
   }
