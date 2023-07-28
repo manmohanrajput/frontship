@@ -19,8 +19,7 @@ import { Link } from "react-router-dom";
 import { AiTwotoneDelete } from "react-icons/ai";
 
 async function ContactData(getContact){
-
-  await axios.get('https://shippment-dfx.onrender.com/api/dispatcher',
+  await axios.get('http://localhost:5000/deleverycreation/deliverycreation',
   // { inst_hash: localStorage.getItem('inst_hash_manual') },
   {
       headers: { authorization: `Bearer ${localStorage.getItem('token')}` },
@@ -32,7 +31,6 @@ async function ContactData(getContact){
   })
 }
 //************************************************************** */
-
 async function updateBatch(id,name,email,phone,setModalIsOpenEdit,getBatchList){
   if (name != "" && email != "" && phone != "") {
       await axios.post('https://shippment-dfx.onrender.com/api/updatedispatcher',
@@ -187,10 +185,13 @@ function DispatchList() {
                     <table class="table align-middle bg-white rounded m-0" id="table-to-xls">
                         <thead class="tableheading">
                           <tr>
-                            <th scope="col" class="borderre">Task ID</th>
+                            <th scope="col" class="borderre">S.No</th>
+                            <th scope="col" class="borderre">Shipment ID</th>
                             <th scope="col">Driver details</th>
                             <th scope="col">Delivery details</th>
                             <th scope="col">Task status</th>
+                            <th scope="col">vehical</th>
+                            <th scope="col">helper</th>
                             <th scope="col">Creation date time</th>
                             <th scope="col">Created by</th>
                             <th scope="col" class="borderre1">Action</th>
@@ -204,12 +205,15 @@ function DispatchList() {
           }).map((item,i)=>
             <tr key={i}>
                  <th scope="row"><span className="dispatcher-id">{i+1}</span></th>
-            {/* <td>{item.id}</td> */}
-            <td>{item.name}</td>
-            <td className="dis-email text-left">{item.email}</td>
+            <td>{item.id}</td>
+            <td>{item.assigndriver}</td>
+            <td className="dis-email text-left">{item.droplocation}<br></br>{item.dropdate}<br></br></td>
             <td>pending</td>
-            <td>{item.phone}</td>
-            <td>{item.phone}</td>
+            <td>{item.vehicleplate}</td>
+            <td>{item.helper}</td>
+            <td>{item.dropdate}</td>
+            <td>manager dashboard</td>
+
             <td>
             {/* <button className="btn bt"><a href="#" class="eye"><i class="bi bi-pen"></i></a></button> */}
             <button className='btn btn1' onClick={()=>{setModalIsOpenEdit(true); setIds(item.id)}}><i class="bi bi-pen"></i></button>
