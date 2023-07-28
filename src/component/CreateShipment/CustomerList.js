@@ -3,7 +3,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import axios from 'axios';
 import '../../css/dispatchlist.css'
 import Navbar from '../Navbar'
-import CreateHelper from '../CreateShipment/CreateHelper'
+
 
 import {
   Nav,
@@ -18,10 +18,11 @@ import {
 
 import { Link } from "react-router-dom";
 import { AiTwotoneDelete } from "react-icons/ai";
+import CreateCustomer from './CreateCustomer';
 
 async function ContactData(getContact){
 
-  await axios.get('https://shippment-dfx.onrender.com/api/createhelper',
+  await axios.get('https://shippment-dfx.onrender.com/api/creatcustomer',
   // { inst_hash: localStorage.getItem('inst_hash_manual') },
   {
       headers: { authorization: `Bearer ${localStorage.getItem('token')}` },
@@ -34,15 +35,15 @@ async function ContactData(getContact){
 }
 //************************************************************** */
 
-async function updateBatch(id,name,email,phone,address,setModalIsOpenEdit,getBatchList){
-  if (name != "" && email != "" && phone != "" && address != "") {
-      await axios.post('https://shippment-dfx.onrender.com/api/updatehelper',
+async function updateBatch(id,name,email,phone,altphone,setModalIsOpenEdit,getBatchList){
+  if (name != "" && email != "" && phone != "" && altphone != "") {
+      await axios.post('https://shippment-dfx.onrender.com/api/updatecustomer',
       {inst_hash: localStorage.getItem('inst_hash'),
       id : id,
       name: name,
       email: email,
       phone: phone,
-      address: address
+      altphone: altphone
       },
       {headers: { authorization:`Bearer ${localStorage.getItem('token')}` }}
   )
@@ -57,7 +58,7 @@ async function updateBatch(id,name,email,phone,address,setModalIsOpenEdit,getBat
 
 //************************************************************** */
 async function deleteContact(ids,getContact,DefaultgetContact ){
-  const results = await axios.post('https://shippment-dfx.onrender.com/api/delhelper',
+  const results = await axios.post('https://shippment-dfx.onrender.com/api/delcustomer',
       {
           id:ids
       },
@@ -70,7 +71,7 @@ async function deleteContact(ids,getContact,DefaultgetContact ){
   }
 
 
-function HelperList() {
+function CustomerList() {
     const [rowCount, setRowCount] = useState(0);
     const [inquiries, setInquiries] = useState( );
     const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -78,7 +79,7 @@ function HelperList() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
-    const [address, setAddress] = useState('');
+    const [altphone, setAltphone] = useState("");
     const [batchList,getBatchList] = useState([]);
 
 
@@ -124,10 +125,10 @@ function HelperList() {
                         <Input type="number" name="phone" id="phone" placeholder="Edit Phone Number " onBlur={(e) => {setPhone(e.target.value); console.log(e.target.value);}} />
                     </FormGroup>
                     <FormGroup>
-                        <Input type="text" name="address" id="address" placeholder="Edit Address " onBlur={(e) => {setAddress(e.target.value); console.log(e.target.value);}} />
+                        <Input type="number" name="phone" id="phone" placeholder="Edit Alternate number " onBlur={(e) => {setAltphone(e.target.value); console.log(e.target.value);}} />
                     </FormGroup>
                     <p id="edit-validate-batch" style={{ color: 'red' }}></p>
-                    <Button variant="contained" className='main_botton' style={{backgroundColor: '#6A3187'}} onClick={() => updateBatch(ids,name,email,phone,address,setModalIsOpenEdit,getBatchList)}>Edit Driver List</Button>
+                    <Button variant="contained" className='main_botton' style={{backgroundColor: '#6A3187'}} onClick={() => updateBatch(ids,name,email,phone,altphone,setModalIsOpenEdit,getBatchList)}>Edit Driver List</Button>
                 </Form>
             </Modal>
 
@@ -190,24 +191,27 @@ function HelperList() {
 
                     </div>
                 <div class="col view-table-new">
+
+
                 <div className='driver-view-list'>
                       <div className=''>
-                        <h2>All Helper List</h2>
+                        <h2>All Customer List</h2>
                       </div>
                       <div className='add-new-form-btn'>
-                      <CreateHelper/>        
+                      <CreateCustomer/>          
                       </div>
                     </div>
+
                     <table class="table align-middle bg-white rounded m-0" id="table-to-xls">
                         <thead class="tableheading">
                           <tr>
                             <th scope="col" class="borderre">No.</th>
-                            <th scope="col">Helper ID</th>
+                            <th scope="col">Customer ID</th>
 
-                            <th scope="col">Helper Name</th>
-                            <th scope="col">Helper Email</th>
-                            <th scope="col">Helper Phone number</th>
-                            <th scope="col">Helper Address</th>
+                            <th scope="col">Customer Name</th>
+                            <th scope="col">Customer Email</th>
+                            <th scope="col">Customer Phone number</th>
+                            <th scope="col"> Alternate Number</th>
                             
                             <th scope="col" class="borderre1">Action</th>
                           </tr>
@@ -224,7 +228,7 @@ function HelperList() {
             <td>{item.name}</td>
             <td className="dis-email text-left">{item.email}</td>
             <td>{item.phone}</td>
-            <td>{item.address}</td>
+            <td>{item.altphone}</td>
             <td>
             {/* <button className="btn bt"><a href="#" class="eye"><i class="bi bi-pen"></i></a></button> */}
             <button className='btn btn1' onClick={()=>{setModalIsOpenEdit(true); setIds(item.id)}}><i class="bi bi-pen"></i></button>
@@ -278,6 +282,6 @@ function HelperList() {
   }
 }
 
-export default HelperList;
+export default CustomerList;
 
 

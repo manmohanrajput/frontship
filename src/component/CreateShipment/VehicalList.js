@@ -3,6 +3,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import axios from 'axios';
 import '../../css/dispatchlist.css'
 import Navbar from '../Navbar'
+import CreateVehical from '../CreateShipment/CreateVehical'
 
 
 import {
@@ -189,7 +190,15 @@ function VehicalList() {
               <Navbar/>
 
                     </div>
-                <div class="col">
+                    <div class="col view-table-new">
+                    <div className='driver-view-list'>
+                      <div className=''>
+                        <h2>All Vehical List</h2>
+                      </div>
+                      <div className='add-new-form-btn'>
+                      <CreateVehical/>       
+                      </div>
+                    </div>
                     <table class="table align-middle bg-white rounded m-0" id="table-to-xls">
                         <thead class="tableheading">
                           <tr>

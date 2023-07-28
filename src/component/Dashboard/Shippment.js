@@ -5,6 +5,7 @@ import CreateDriver from './CreateDriver'
 import CreateShipment from '../CreateShipment/CreateShipment'
 import CreateHelper from '../CreateShipment/CreateHelper'
 import CreateVehical from '../CreateShipment/CreateVehical'
+import CreateCustomer from '../CreateShipment/CreateCustomer'
 function Shippment() {
   return (
     
@@ -22,7 +23,7 @@ function Shippment() {
 												<div class="w-50"><CreateVehical/></div>
 											</div>
 											<div className='account-here-btn text-center'>
-												<div class="w-100 "><CreateVehical/></div>
+												<div class="w-100 "><CreateCustomer/></div>
 											</div>
 
 									  </div>

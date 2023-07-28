@@ -162,32 +162,30 @@ function DispatchList() {
     
   
   
-    <div class="rightdiv px-3 py-5">
-        <div class="container-fluid">
+    <div class="rightdiv px-3 py-2">
+        <div class="container-fluid table-header-title">
             <div class="row">
-            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 nameuser">
+              <div class="w-50 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 nameuser">
                 <h2>Shipment Record</h2>
-    
-        {/* <p>May 22, 2023</p>  */}
-                </div>
-                <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
-                    <div class="input-group input-group-lg">
+              </div>
+              <div class="w-50 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+                  <div class="input-group input-group-lg">
                     <span style={{backgroundColor:"#fff"}} class="input-group-text" id="basic-addon1"><i class="bi bi-search" ></i></span>
-                 <input  style={{fontSize:"15px"}} className="form-control me-2 serch-filed" type="search" placeholder="Search Here" aria-label="Search" onChange={(e)=>setSearch(e.target.value)} />
-                      </div>
-                </div>
+                    <input  style={{fontSize:"15px"}} className="form-control me-2 serch-filed" type="search" placeholder="Search Here" aria-label="Search" onChange={(e)=>setSearch(e.target.value)} />
+                  </div>
+              </div>
              
             </div>
           
-            <div className="row mt-3">
+            <div className="row pt-0">
               <div className='col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 '>
             
                     </div>
-                <div class="col">
+                <div class="col p-0">
                     <table class="table align-middle bg-white rounded m-0" id="table-to-xls">
                         <thead class="tableheading">
                           <tr>
-                            <th scope="col" class="borderre">Task ID</th>
+                            <th scope="col" class="borderre">S.no</th>
                             <th scope="col">Driver details</th>
                             <th scope="col">Delivery details</th>
                             <th scope="col">Task status</th>

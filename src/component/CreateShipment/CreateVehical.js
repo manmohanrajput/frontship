@@ -32,15 +32,14 @@ async function ContactData(getContact){
   })
 }
 //************************************************************** */
-async function addBatch(name,email,vehicalplate,phone,setModalIsOpen,getBatchList){
-  if (name != "" && email != "" && vehicalplate!= "" && phone!= "" ) {
+async function addBatch(name,vehicalplate,setModalIsOpen,getBatchList){
+  if (name != "" && vehicalplate!= "" ) {
     await axios.post('https://shippment-dfx.onrender.com/api/addvehical',
     {
         inst_hash: localStorage.getItem('name'),
         name: name,
-       email: email,
        vehicalplate:vehicalplate,
-       phone:phone
+       
     },
     {headers: { authorization:`Bearer ${localStorage.getItem('token')}` }}    
     )
@@ -128,20 +127,22 @@ function Createvehical() {
                     <h5 className='card-header-01 text-center'>Create Vehical</h5>
                 </div>
                 <Form className='form-control-holder-hpr'>
-                    <FormGroup>
-                        <Input type="text" name="name" id="name" placeholder=" Name" onBlur={(e) => handleInput(e)}/>
-                    </FormGroup>
-                    <FormGroup>
-                        <Input type="email" name="email" id="email" placeholder="email" onBlur={(e) => setEmail(e.target.value)}/>
-                    </FormGroup>
-                    <FormGroup>
-                        <Input type="number" name="phone" id="phone" placeholder="phone" onBlur={(e) => setPhone(e.target.value)}/>
-                    </FormGroup>
-                    <FormGroup>
-                        <Input type="text" name="vehicalplate" id="vehicalplate" placeholder="vehical plate" onBlur={(e) => setVehicalplate(e.target.value)}/>
-                    </FormGroup>
+                  <div className='row'>
+                    <div className='col'>
+                      <FormGroup>
+                      <label class="form-label">Vehicle Name<span class="stra-icon">*</span></label>
+                          <Input type="text" name="name" id="name" placeholder="Enter Vehicle Name" onBlur={(e) => handleInput(e)}/>
+                      </FormGroup>
+                    </div>
+                    <div className='col'>
+                      <FormGroup>
+                      <label class="form-label">Vehicle plate Number<span class="stra-icon">*</span></label>
+                          <Input type="text" name="vehicalplate" id="vehicalplate" placeholder="Enter Plate Number" onBlur={(e) => setVehicalplate(e.target.value)}/>
+                      </FormGroup>
+                    </div>
+                  </div>
                     <p id="validate-batch" style={{ color: 'red' }}></p>
-                    <Button variant="contained" className='main_botton  submit-btn' onClick={() => addBatch(name,email,vehicalplate,phone,setModalIsOpen,getBatchList)}>Create Vehical</Button>
+                    <Button variant="contained" className='main_botton  submit-btn' onClick={() => addBatch(name,vehicalplate,setModalIsOpen,getBatchList)}>Create Vehical</Button>
 
                 </Form>
             </Modal>
