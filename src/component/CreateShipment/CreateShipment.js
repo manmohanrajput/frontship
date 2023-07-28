@@ -58,7 +58,7 @@ function CreateShipment() {
     }
     if (custoname&&custoemail&&custocontactnum&&custoaltnum&&pickuplocation&&droplocation&&description&&shipment) {
       fetch(
-           "https://shippment-dfx.onrender.com/api/addcreatshipment",
+           "https://shippment-dfx.onrender.com/api/addtotalshipmentrecord",
         {
           method: "POST",
           headers: {
