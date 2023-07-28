@@ -20,6 +20,7 @@ const CustomerList = React.lazy(() => import("./component/CreateShipment/Custome
 const paymentRecords = React.lazy(() => import("./component/Dashboard/PaymentRecords"))
 const settlementRecord = React.lazy(() => import("./component/Dashboard/SettlementRecords"))
 const settlementHistory = React.lazy(() => import("./component/Dashboard/SettlementHistory"))
+const DriverDropdown = React.lazy(() => import("./component/CreateShipment/DriverDropdown"))
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
             <Route  exact path="/paymentRecords" element={<PaymentRecords/>}/>
             <Route  exact path="/settlementRecord" element={<SettlementRecords/>}/>
             <Route  exact path="/settlementhistory" element={<SettlementHistory/>}/>
+            <Route  exact path="/driverdropdown" element={<DriverDropdown/>}/>
 
           </Routes>
         </React.Suspense>
