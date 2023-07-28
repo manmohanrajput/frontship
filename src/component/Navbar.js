@@ -68,7 +68,13 @@ function Navbar() {
 					    		<a class="nav-link" href="#">Admin</a>
 					    	</div>
 				    		<div class="notification">
-				    			<img src="/Assets/Navbar/bell.png"/>
+                  <span className='tooltip-holder'>
+                      <span class="nav-tooltip">
+                      Notification
+                  </span>
+				    			    <img className='Notification-img' src="/Assets/Navbar/bell.png"/>
+                  </span>
+                  
 				    			<ChangePass/>
 				    			
                                 <Nav>

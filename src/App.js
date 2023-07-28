@@ -20,6 +20,8 @@ const CustomerList = React.lazy(() => import("./component/CreateShipment/Custome
 const paymentRecords = React.lazy(() => import("./component/Dashboard/PaymentRecords"))
 const settlementRecord = React.lazy(() => import("./component/Dashboard/SettlementRecords"))
 const settlementHistory = React.lazy(() => import("./component/Dashboard/SettlementHistory"))
+const ViewShipment = React.lazy(() => import("./component/Dashboard/ViewShipment"))
+
 
 
 function App() {
@@ -44,6 +46,8 @@ function App() {
             <Route  exact path="/paymentRecords" element={<PaymentRecords/>}/>
             <Route  exact path="/settlementRecord" element={<SettlementRecords/>}/>
             <Route  exact path="/settlementhistory" element={<SettlementHistory/>}/>
+            <Route  exact path="/view" element={<ViewShipment />}/>
+
 
           </Routes>
         </React.Suspense>

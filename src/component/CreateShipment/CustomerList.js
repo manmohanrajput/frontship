@@ -171,11 +171,6 @@ function CustomerList() {
     <div class="rightdiv px-3 py-5">
         <div class="container-fluid">
             <div class="row">
-            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 nameuser">
-                <h2>All Helper List</h2>
-    
-        {/* <p>May 22, 2023</p>  */}
-                </div>
                 <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
                     <div class="input-group input-group-lg">
                     <span style={{backgroundColor:"#fff"}} class="input-group-text" id="basic-addon1"><i class="bi bi-search" ></i></span>
