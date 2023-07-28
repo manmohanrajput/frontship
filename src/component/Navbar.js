@@ -80,13 +80,13 @@ function Navbar() {
                   
 				    			<ChangePass/>
                   
-                <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Notification">
+                {/* <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Notification">
 				    			<img src="/Assets/Navbar/bell.png"/>
 
-                </span>
-                <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Edit Password">
+                </span> */}
+                {/* <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Edit Password">
 				    			<ChangePass/>
-                  </span>
+                  </span> */}
 
 				    			
                                 <Nav>

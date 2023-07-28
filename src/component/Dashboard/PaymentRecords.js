@@ -21,7 +21,7 @@ import { AiTwotoneDelete } from "react-icons/ai";
 
 async function ContactData(getContact){
 
-  await axios.get('https://shippment-dfx.onrender.com/api/createhelper',
+  await axios.get('http://localhost:5000/api/getpayment',
   // { inst_hash: localStorage.getItem('inst_hash_manual') },
   {
       headers: { authorization: `Bearer ${localStorage.getItem('token')}` },
@@ -215,10 +215,10 @@ function PaymentRecords() {
                             <th scope="col" class="borderre">No.</th>
                             <th scope="col">Driver Name</th>
 
-                            <th scope="col">Shipment Id</th>
+                            {/* <th scope="col">Shipment Id</th>
                             <th scope="col" class="borderre1">Amount</th>
                             <th scope="col" class="borderre1">Amount Status</th>
-                            <th scope="col">Payment Details</th>
+                            <th scope="col">Payment Details</th> */}
                            
 
                             <th scope="col">Shipment ID</th>
@@ -236,13 +236,13 @@ function PaymentRecords() {
           }).map((item,i)=>
             <tr key={i}>
                  <th scope="row"><span className="dispatcher-id">{i+1}</span></th>
-            <td>{item.name}</td>
-            <td>{item.phone}</td>
+            <td>{item.full_name}</td>
+            <td>{item.shipment_id}</td>
             
-            <td>{item.phone}</td>
+            <td>{item.amount}</td>
             <td>
-              <div className='Successful-py-01'>{item.phone}</div></td>
-            <td>{item.address}</td>
+              <div className='Successful-py-01'>{item.status}</div></td>
+            <td>{item.DateAndTime}</td>
             
             <td>
             {/* <button className="btn bt"><a href="#" class="eye"><i class="bi bi-pen"></i></a></button> */}
