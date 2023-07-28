@@ -28,41 +28,64 @@ function CreateCustomer() {
       //   date:fullDate,
     };
 
-    if (
-      name.length == 0 ||
-      email.length == 0 ||
-      phone.length == 10 ||
-      altphone.length == 10
-    ) {
+
+
+
+    if (name === '' || email === '' || phone === '' || altphone === '') {
       setError(true);
-      setSuccbtn(
-        <span className="" style={{ color: "green" }}>
-          Submit Succesfully
-        </span>
-      );
-    }
-    if (name&&email&&phone&&altphone) {
-      fetch(
-           "https://shippment-dfx.onrender.com/api/addcustomer",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(dataToSubmit),
-        }
-      )
-        .then((res) => res.json())
-        .then((res) => {
-          console.log(res, dataToSubmit);
-        });
+      setSuccbtn(<span className="" style={{ color: 'red' }}>Please fill all the fields</span>);
     } else {
-      setSuccbtn(
-        <span className="" style={{ color: "red" }}>
-          Please fill all the field
-        </span>
-      );
+      setError(false);
+      setSuccbtn('');
+      axios.post('https://shippment-dfx.onrender.com/api/addcustomer', dataToSubmit)
+        .then((response) => {
+          console.log(response.data);
+          setSuccbtn(<span className="" style={{ color: 'green' }}>Submitted Successfully</span>);
+    setModalIsOpen(false);
+        })
+        .catch((error) => {
+          console.error('Error submitting data:', error);
+          setSuccbtn(<span className="" style={{ color: 'red' }}>Failed to submit data</span>);
+        });
     }
+
+    // if (
+    //   name.length == 0 ||
+    //   email.length == 0 ||
+    //   phone.length == 10 ||
+    //   altphone.length == 10
+    // ) {
+    //   setError(true);
+    //   setSuccbtn(
+    //     <span className="" style={{ color: "green" }}>
+    //       Submit Succesfully
+    //     </span>
+    //   );
+    // }
+    // if (name&&email&&phone&&altphone) {
+    //   fetch(
+    //        "https://shippment-dfx.onrender.com/api/addcustomer",
+    //     {
+    //       method: "POST",
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //       },
+    //       body: JSON.stringify(dataToSubmit),
+    //     }
+    //   )
+    //     .then((res) => res.json())
+    //     .then((res) => {
+    //       console.log(res, dataToSubmit);
+    //     });
+    // } else {
+    //   setSuccbtn(
+    //     <span className="" style={{ color: "red" }}>
+    //       Please fill all the field
+    //     </span>
+    //   );
+    // }
+    // setModalIsOpen(false);
+
   };
 
   return (
@@ -73,7 +96,7 @@ function CreateCustomer() {
             <div className="admin-dashboard">
               <div className="title-header">
                 <h5 className="card-header-01 text-center">Create Customer</h5>
-                <ModalBody className="close-icon">
+                <ModalBody className="close-icon-01">
                   <AiOutlineClose
                     className="main_AiOutlineClose"
                     onClick={() => setModalIsOpen(false)}

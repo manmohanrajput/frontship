@@ -151,7 +151,7 @@ function DispatchList() {
               </Button>
               &nbsp;
               <Button outline onClick={() => setModalIsOpenDelete(false)}>
-                Cancle
+              Cancel
               </Button>
             </div>
           </Form>
@@ -164,7 +164,7 @@ function DispatchList() {
         <div class="container-fluid table-header-title">
             <div class="row">
               <div class="w-50 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 nameuser">
-                <h2>Shipment Record</h2>
+                <h2>Shipment List</h2>
               </div>
               <div class="w-50 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
                   <div class="input-group input-group-lg">
@@ -193,6 +193,11 @@ function DispatchList() {
                             <th scope="col">helper</th>
                             <th scope="col">Creation date time</th>
                             <th scope="col">Created by</th>
+                            <th scope="col">Customer Name</th>
+                            <th scope="col">Phone no.</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Pickup Location</th>
+                            <th scope="col">Drop Location</th>
                             <th scope="col" class="borderre1">Action</th>
                           </tr>
                         </thead>
@@ -216,7 +221,8 @@ function DispatchList() {
             <td>
             {/* <button className="btn bt"><a href="#" class="eye"><i class="bi bi-pen"></i></a></button> */}
             <button className='btn btn1' onClick={()=>{setModalIsOpenEdit(true); setIds(item.id)}}><i class="bi bi-pen"></i></button>
-              <button className='btn bt' onClick={()=>{setModalIsOpenDelete(true); setIds(item.id);}}><i class="bi bi-trash delete"></i></button>
+            <button className='btn bt' onClick={()=>{setModalIsOpenDelete(true); setIds(item.id);}}><i class="bi bi-trash delete"></i></button>
+            <a href='/view'><button className='btn bt' ><i class="bi bi-eye"></i></button></a>
             </td>
             
           </tr>
