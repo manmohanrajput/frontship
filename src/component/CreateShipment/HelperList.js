@@ -228,11 +228,11 @@ function HelperList() {
           }).map((item,i)=>
             <tr key={i}>
                  <th scope="row"><span className="dispatcher-id">{i+1}</span></th>
-            <td>{item.id}</td>
             <td>{item.name}</td>
             <td>{item.phone}</td>
+            <td>{item.email}</td>
             <td>{item.address}</td>
-            <td>12 July 23</td>
+            <td>{item.DateAndTime}</td>
             <td>
             {/* <button className="btn bt"><a href="#" class="eye"><i class="bi bi-pen"></i></a></button> */}
             <button className='btn btn1' onClick={()=>{setModalIsOpenEdit(true); setIds(item.id)}}><i class="bi bi-pen"></i></button>

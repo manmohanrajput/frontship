@@ -227,9 +227,10 @@ function CustomerList() {
                  <th scope="row"><span className="dispatcher-id">{i+1}</span></th>
             <td>{item.id}</td>
             <td>{item.name}</td>
-            <td className="dis-email text-left">{item.email}</td>
             <td>{item.phone}</td>
-            <td>Registration Date</td>
+            <td className="dis-email text-left">{item.email}</td>
+            <td>{item.address}</td>
+            <td>{item.DateAndTime}</td>
             <td>
             {/* <button className="btn bt"><a href="#" class="eye"><i class="bi bi-pen"></i></a></button> */}
             <button className='btn btn1' onClick={()=>{setModalIsOpenEdit(true); setIds(item.id)}}><i class="bi bi-pen"></i></button>

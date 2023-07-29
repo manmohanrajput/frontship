@@ -216,10 +216,13 @@ function DispatchList() {
                     <table class="table align-middle bg-white rounded m-0" id="table-to-xls">
                         <thead class="tableheading">
                           <tr>
-                            <th scope="col" class="borderre">Dispatcher ID</th>
+                            <th scope="col" class="borderre">No.</th>
+                            <th scope="col">Dispatcher Id</th>
                             <th scope="col">Dispatcher Name</th>
                             <th scope="col">Email</th>
+                            <th scope="col">Password</th>
                             <th scope="col">Phone number</th>
+                            {/* <th scope="col">Action</th> */}
                             
                             <th scope="col" class="borderre1">Action</th>
                           </tr>
@@ -233,8 +236,10 @@ function DispatchList() {
             <tr key={i}>
                  <th scope="row"><span className="dispatcher-id">{i+1}</span></th>
             {/* <td>{item.id}</td> */}
+            <td>{item.id}</td>
             <td>{item.name}</td>
             <td className="dis-email text-left">{item.email}</td>
+            <td>{item.password}</td>
             <td>{item.phone}</td>
             <td>
             {/* <button className="btn bt"><a href="#" class="eye"><i class="bi bi-pen"></i></a></button> */}
