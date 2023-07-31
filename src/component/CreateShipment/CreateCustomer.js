@@ -11,12 +11,19 @@ function CreateCustomer() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [address, setAddress] = useState("");
   const [altphone, setAltphone] = useState("");
 
   
   const [error, setError] = useState(false);
   const [modalPrivacy, setModalPrivacy] = useState(false);
   const [succbtn, setSuccbtn] = useState();
+
+  const currentDate = new Date().toLocaleString('en-IN', {
+    timeZone: 'Asia/Kolkata',
+    hour12: true,
+  });
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,13 +32,16 @@ function CreateCustomer() {
       email,
       phone,
       altphone,
+      address,
+      DateAndTime: currentDate, // Adding current date and time to the data object
+
       //   date:fullDate,
     };
 
 
 
 
-    if (name === '' || email === '' || phone === '' || altphone === '') {
+    if (name === '' || email === '' || phone === '' || altphone === '' || address === '') {
       setError(true);
       setSuccbtn(<span className="" style={{ color: 'red' }}>Please fill all the fields</span>);
     } else {
@@ -49,42 +59,6 @@ function CreateCustomer() {
         });
     }
 
-    // if (
-    //   name.length == 0 ||
-    //   email.length == 0 ||
-    //   phone.length == 10 ||
-    //   altphone.length == 10
-    // ) {
-    //   setError(true);
-    //   setSuccbtn(
-    //     <span className="" style={{ color: "green" }}>
-    //       Submit Succesfully
-    //     </span>
-    //   );
-    // }
-    // if (name&&email&&phone&&altphone) {
-    //   fetch(
-    //        "https://shippment-dfx.onrender.com/api/addcustomer",
-    //     {
-    //       method: "POST",
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //       },
-    //       body: JSON.stringify(dataToSubmit),
-    //     }
-    //   )
-    //     .then((res) => res.json())
-    //     .then((res) => {
-    //       console.log(res, dataToSubmit);
-    //     });
-    // } else {
-    //   setSuccbtn(
-    //     <span className="" style={{ color: "red" }}>
-    //       Please fill all the field
-    //     </span>
-    //   );
-    // }
-    // setModalIsOpen(false);
 
   };
 
@@ -162,6 +136,20 @@ function CreateCustomer() {
                        type="number"
                     />
                   {error && altphone.length <= 0 ?<span className="valid-form" style={{color:'red'}}>Please Enter the 10 Digit number*</span>:""}
+
+                  </div>
+                  <div className="mb-4 w-50">
+                    <label className="form-label">
+                    Customer Address<span className="stra-icon">*</span>{" "}
+                    </label>
+                    <input
+                       name="address"   
+                       onChange={(e)=> setAddress(e.target.value)}          
+                       id="address"
+                       placeholder="Enter Address"
+                       type="name"
+                    />
+                  {error && altphone.length <= 0 ?<span className="valid-form" style={{color:'red'}}>Please Enter Address*</span>:""}
 
                   </div>
                   </div>

@@ -211,13 +211,14 @@ function DriverList() {
                     <table class="table align-middle bg-white rounded m-0" id="table-to-xls">
                         <thead class="tableheading">
                           <tr>
+                            <th scope="col" class="borderre">No.</th>
                             <th scope="col" class="borderre">Driver ID</th>
                             <th scope="col">Driver Name</th>
                             <th scope="col">Email</th>
                             <th scope="col">Phone number</th>
                             <th scope="col">Address</th>
                             <th scope="col">password</th>
-                            <th scope="col">Total Driver</th>
+                            <th scope="col">Total Orders</th>
                             
                             <th scope="col" class="borderre1">Action</th>
                           </tr>
@@ -231,6 +232,7 @@ function DriverList() {
             <tr key={i}>
                  <th scope="row"><span className="dispatcher-id">{i+1}</span></th>
             {/* <td>{item.id}</td> */}
+            <td>{item.id}</td>
             <td>{item.full_name}</td>
             <td className="dis-email text-left">{item.email}</td>
             <td>{item.phone}</td>
