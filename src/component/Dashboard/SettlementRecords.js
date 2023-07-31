@@ -21,7 +21,7 @@ import { AiTwotoneDelete } from "react-icons/ai";
 
 async function ContactData(getContact){
 
-  await axios.get('https://shippment-dfx.onrender.com/api/createhelper',
+  await axios.get('http://localhost:5000/api/sattlementrecord',
   // { inst_hash: localStorage.getItem('inst_hash_manual') },
   {
       headers: { authorization: `Bearer ${localStorage.getItem('token')}` },
@@ -226,7 +226,7 @@ function SettlementRecords() {
           }).map((item,i)=>
             <tr key={i}>
                  <th scope="row"><span className="dispatcher-id">{i+1}</span></th>
-            <td>{item.name}</td>
+            <td>{item.full_name}</td>
             <td>{item.amount}</td>
             {/* <td>{item.phone}</td> */}
             <td>
